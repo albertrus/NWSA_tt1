@@ -72,7 +72,8 @@ export async function POST(request: Request) {
       results,
       passed: score / quiz.questions.length >= 0.7,
     });
-  } catch {
+  } catch (error) {
+    console.error("[quiz/submit] Error:", error);
     return NextResponse.json(
       { error: "Failed to submit quiz" },
       { status: 500 }

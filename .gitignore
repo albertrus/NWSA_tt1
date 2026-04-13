@@ -42,12 +42,11 @@ next-env.d.ts
 .env.local
 .env*.local
 
-# SQLite database
+# SQLite database files (not migrations)
 *.db
 *.db-journal
 prisma/dev.db
 prisma/test.db
-prisma/migrations/
 
 # Build outputs
 .next/
