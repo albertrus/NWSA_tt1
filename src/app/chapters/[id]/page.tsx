@@ -10,13 +10,14 @@ import { MarkChapterComplete } from "@/components/MarkChapterComplete";
 export default async function ChapterPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   await seedDatabase();
   const session = await getServerSession(authOptions);
+  const { id } = await params;
 
   const chapter = await prisma.chapter.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: { quiz: { select: { id: true } } },
   });
 
@@ -43,7 +44,6 @@ export default async function ChapterPage({
       ? allChapters[currentIndex + 1]
       : null;
 
-  // Simple markdown-like renderer
   const renderContent = (content: string) =>
     content.split("\n").map((line, i) => {
       if (line.startsWith("# "))
@@ -72,7 +72,6 @@ export default async function ChapterPage({
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
           <Link href="/chapters" className="hover:text-indigo-600">Chapters</Link>
           <span>/</span>

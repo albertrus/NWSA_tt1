@@ -4,12 +4,13 @@ import { seedDatabase } from "@/lib/db";
 
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     await seedDatabase();
+    const { id } = await params;
     const chapter = await prisma.chapter.findUnique({
-      where: { id: params.id },
+      where: { id },
       include: {
         quiz: {
           include: { questions: { orderBy: { order: "asc" } } },

@@ -9,7 +9,7 @@ import { QuizClient } from "@/components/QuizClient";
 export default async function QuizPage({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }) {
   await seedDatabase();
   const session = await getServerSession(authOptions);
@@ -17,8 +17,10 @@ export default async function QuizPage({
     redirect("/auth/login");
   }
 
+  const { id } = await params;
+
   const chapter = await prisma.chapter.findUnique({
-    where: { id: params.id },
+    where: { id },
     include: {
       quiz: {
         include: { questions: { orderBy: { order: "asc" } } },
