@@ -8,6 +8,7 @@ An MVP online school platform for preparing and passing the **Message TT1** exam
 - 📚 **Chapter-based Lessons** — Structured text content for 3 core exam topics
 - ✅ **End-of-Chapter Quizzes** — Interactive quizzes with scoring (pass threshold: 70%)
 - 📊 **Progress Dashboard** — Visual progress tracking, quiz history, and completion status
+- 🗓️ **4-Week Study Guide** — Structured weekly training roadmap and exam-week checklist
 - ⚙️ **CI/CD Pipeline** — GitHub Actions for lint, type-check, and build on every push/PR
 
 ## Tech Stack
@@ -65,6 +66,7 @@ src/
 │   ├── auth/             # Auth pages (login, register, forgot-password, error)
 │   ├── chapters/         # Chapter list, detail, and quiz pages
 │   ├── dashboard/        # Progress dashboard
+│   ├── study-guide/      # 4-week training plan and checklist
 │   └── page.tsx          # Landing page
 ├── components/           # Reusable React components
 ├── lib/                  # Prisma client, auth config, seed data
