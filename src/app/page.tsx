@@ -31,6 +31,12 @@ export default function HomePage() {
           >
             Browse Chapters
           </Link>
+          <Link
+            href="/study-guide"
+            className="bg-indigo-100 text-indigo-700 px-8 py-3 rounded-xl font-semibold text-lg hover:bg-indigo-200 transition-colors"
+          >
+            View 4-Week Plan
+          </Link>
         </div>
       </section>
 
