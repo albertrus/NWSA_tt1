@@ -31,6 +31,12 @@ export function Navbar() {
                 >
                   Chapters
                 </Link>
+                <Link
+                  href="/study-guide"
+                  className="hover:text-indigo-200 transition-colors"
+                >
+                  Study Guide
+                </Link>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
                   className="bg-white text-indigo-700 px-4 py-1.5 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
@@ -40,6 +46,12 @@ export function Navbar() {
               </>
             ) : (
               <>
+                <Link
+                  href="/study-guide"
+                  className="hover:text-indigo-200 transition-colors"
+                >
+                  Study Guide
+                </Link>
                 <Link
                   href="/auth/login"
                   className="hover:text-indigo-200 transition-colors"
@@ -99,6 +111,13 @@ export function Navbar() {
                 >
                   Chapters
                 </Link>
+                <Link
+                  href="/study-guide"
+                  className="block py-2 hover:text-indigo-200"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Study Guide
+                </Link>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
                   className="block py-2 hover:text-indigo-200"
@@ -108,6 +127,13 @@ export function Navbar() {
               </>
             ) : (
               <>
+                <Link
+                  href="/study-guide"
+                  className="block py-2 hover:text-indigo-200"
+                  onClick={() => setMenuOpen(false)}
+                >
+                  Study Guide
+                </Link>
                 <Link
                   href="/auth/login"
                   className="block py-2 hover:text-indigo-200"
