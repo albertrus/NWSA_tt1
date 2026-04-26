@@ -9,7 +9,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-indigo-700 text-white shadow-md">
+    <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <Link href="/" className="text-xl font-bold tracking-tight">
@@ -21,25 +21,25 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="hover:text-indigo-200 transition-colors"
+                  className="hover:text-[#FF5500] transition-colors"
                 >
                   Dashboard
                 </Link>
                 <Link
                   href="/chapters"
-                  className="hover:text-indigo-200 transition-colors"
+                  className="hover:text-[#FF5500] transition-colors"
                 >
                   Chapters
                 </Link>
                 <Link
                   href="/study-guide"
-                  className="hover:text-indigo-200 transition-colors"
+                  className="hover:text-[#FF5500] transition-colors"
                 >
                   Study Guide
                 </Link>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="bg-white text-indigo-700 px-4 py-1.5 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
+                  className="bg-[#FF5500] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#e04a00] transition-colors"
                 >
                   Sign Out
                 </button>
@@ -48,19 +48,19 @@ export function Navbar() {
               <>
                 <Link
                   href="/study-guide"
-                  className="hover:text-indigo-200 transition-colors"
+                  className="hover:text-[#FF5500] transition-colors"
                 >
                   Study Guide
                 </Link>
                 <Link
                   href="/auth/login"
-                  className="hover:text-indigo-200 transition-colors"
+                  className="hover:text-[#FF5500] transition-colors"
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="bg-white text-indigo-700 px-4 py-1.5 rounded-lg font-medium hover:bg-indigo-50 transition-colors"
+                  className="bg-[#FF5500] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#e04a00] transition-colors"
                 >
                   Get Started
                 </Link>
@@ -99,28 +99,28 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Dashboard
                 </Link>
                 <Link
                   href="/chapters"
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Chapters
                 </Link>
                 <Link
                   href="/study-guide"
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Study Guide
                 </Link>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                 >
                   Sign Out
                 </button>
@@ -129,21 +129,21 @@ export function Navbar() {
               <>
                 <Link
                   href="/study-guide"
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Study Guide
                 </Link>
                 <Link
                   href="/auth/login"
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="block py-2 hover:text-indigo-200"
+                  className="block py-2 hover:text-[#FF5500]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Get Started

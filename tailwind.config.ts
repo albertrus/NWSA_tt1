@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        "sc-orange": "#FF5500",
+        surface: "#1a1a1a",
+        "surface-elevated": "#222222",
+        "surface-hover": "#2a2a2a",
       },
     },
   },
