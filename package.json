@@ -7,7 +7,13 @@
     "build": "next build",
     "db:migrate": "prisma migrate deploy",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "cap:sync": "npx cap sync",
+    "cap:open:ios": "npx cap open ios",
+    "cap:open:android": "npx cap open android"
+  },
+  "overrides": {
+    "tar": "^7.5.13"
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.11.1",
@@ -19,6 +25,10 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@capacitor/android": "^6.2.0",
+    "@capacitor/cli": "^6.2.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/ios": "^6.2.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
     "@types/react": "^18",
