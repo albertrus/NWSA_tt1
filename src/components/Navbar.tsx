@@ -47,7 +47,7 @@ export function Navbar() {
                   <Link href="/chapters" className="hover:text-[#FF5500] transition-colors">
                     Chapters
                   </Link>
-                  <Link href="/study-guide" className="hover:text-[#FF5500] transition-colors">
+                  <Link href="/course-overview" className="hover:text-[#FF5500] transition-colors">
                     Course Overview
                   </Link>
                   <Link href="/faq" className="hover:text-[#FF5500] transition-colors">
@@ -73,7 +73,7 @@ export function Navbar() {
                 </>
               ) : (
                 <>
-                  <Link href="/study-guide" className="hover:text-[#FF5500] transition-colors">
+                  <Link href="/course-overview" className="hover:text-[#FF5500] transition-colors">
                     Course Overview
                   </Link>
                   <Link href="/faq" className="hover:text-[#FF5500] transition-colors">
@@ -172,7 +172,7 @@ export function Navbar() {
                   Chapters
                 </Link>
                 <Link
-                  href="/study-guide"
+                  href="/course-overview"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -205,7 +205,7 @@ export function Navbar() {
             ) : (
               <>
                 <Link
-                  href="/study-guide"
+                  href="/course-overview"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
