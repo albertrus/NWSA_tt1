@@ -32,8 +32,8 @@ export function MarkChapterComplete({ chapterId, isCompleted }: Props) {
       disabled={loading}
       className={`px-4 py-2 rounded-xl text-sm font-medium transition-colors disabled:opacity-50 ${
         completed
-          ? "bg-green-100 text-green-700 hover:bg-green-200"
-          : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+          ? "bg-[#00FF88]/20 text-[#00FF88] hover:bg-[#00FF88]/30"
+          : "bg-[#3A3A3D] text-gray-300 hover:bg-[#4A5568]"
       }`}
     >
       {loading ? "Saving..." : completed ? "✓ Completed" : "Mark Complete"}

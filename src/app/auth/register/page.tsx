@@ -43,28 +43,28 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-white flex items-center justify-center px-4">
+    <div className="min-h-screen bg-[#1A1A1D] flex items-center justify-center px-4">
       <div className="max-w-md w-full">
         <div className="text-center mb-8">
-          <Link href="/" className="text-2xl font-bold text-indigo-600">
+          <Link href="/" className="text-2xl font-bold text-[#1E88E5]">
             NWSA TT1 Prep
           </Link>
-          <h1 className="text-3xl font-bold text-gray-900 mt-4 mb-2">
+          <h1 className="text-3xl font-bold text-white mt-4 mb-2">
             Create your account
           </h1>
-          <p className="text-gray-600">Start preparing for the TT1 exam today</p>
+          <p className="text-[#546E7A]">Start preparing for the TT1 exam today</p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+        <div className="bg-[#2D2D30] rounded-2xl shadow-sm border border-[#4A5568] p-8">
           {error && (
-            <div className="bg-red-50 text-red-600 rounded-lg p-3 mb-6 text-sm">
+            <div className="bg-[#FF5722]/20 text-[#FF5722] rounded-lg p-3 mb-6 text-sm border border-[#FF5722]/30">
               {error}
             </div>
           )}
 
           <button
             onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-            className="w-full flex items-center justify-center gap-3 border border-gray-300 rounded-xl py-3 px-4 text-gray-700 font-medium hover:bg-gray-50 transition-colors mb-6"
+            className="w-full flex items-center justify-center gap-3 border border-[#4A5568] rounded-xl py-3 px-4 text-gray-300 font-medium hover:bg-[#3A3A3D] transition-colors mb-6"
           >
             <svg className="w-5 h-5" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -77,16 +77,16 @@ export default function RegisterPage() {
 
           <div className="relative mb-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200" />
+              <div className="w-full border-t border-[#4A5568]" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-white text-gray-500">or</span>
+              <span className="px-2 bg-[#2D2D30] text-[#546E7A]">or</span>
             </div>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-300 mb-1">
                 Full Name
               </label>
               <input
@@ -94,12 +94,12 @@ export default function RegisterPage() {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 required
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full bg-[#3A3A3D] border border-[#4A5568] rounded-xl px-4 py-3 text-white placeholder-[#546E7A] focus:outline-none focus:ring-2 focus:ring-[#1E88E5] focus:border-transparent"
                 placeholder="John Doe"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-300 mb-1">
                 Email address
               </label>
               <input
@@ -107,12 +107,12 @@ export default function RegisterPage() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full bg-[#3A3A3D] border border-[#4A5568] rounded-xl px-4 py-3 text-white placeholder-[#546E7A] focus:outline-none focus:ring-2 focus:ring-[#1E88E5] focus:border-transparent"
                 placeholder="you@example.com"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
+              <label className="block text-sm font-medium text-gray-300 mb-1">
                 Password
               </label>
               <input
@@ -121,24 +121,24 @@ export default function RegisterPage() {
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 minLength={8}
-                className="w-full border border-gray-300 rounded-xl px-4 py-3 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                className="w-full bg-[#3A3A3D] border border-[#4A5568] rounded-xl px-4 py-3 text-white placeholder-[#546E7A] focus:outline-none focus:ring-2 focus:ring-[#1E88E5] focus:border-transparent"
                 placeholder="At least 8 characters"
               />
             </div>
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-indigo-600 text-white py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-50"
+              className="w-full bg-[#1E88E5] text-white py-3 rounded-xl font-semibold hover:bg-[#1565C0] transition-colors disabled:opacity-50"
             >
               {loading ? "Creating account..." : "Create Account"}
             </button>
           </form>
 
-          <p className="text-center text-gray-600 mt-6 text-sm">
+          <p className="text-center text-[#546E7A] mt-6 text-sm">
             Already have an account?{" "}
             <Link
               href="/auth/login"
-              className="text-indigo-600 font-medium hover:underline"
+              className="text-[#1E88E5] font-medium hover:underline"
             >
               Sign in
             </Link>

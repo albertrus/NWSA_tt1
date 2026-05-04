@@ -3,8 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --background: #111111;
+  --background: #1A1A1D;
   --foreground: #f1f1f1;
+  --electric-blue: #1E88E5;
+  --electric-blue-dark: #1565C0;
+  --hi-orange: #FF5722;
+  --hi-orange-dark: #F4511E;
+  --charcoal: #1A1A1D;
+  --charcoal-elevated: #2D2D30;
+  --charcoal-hover: #3A3A3D;
+  --steel-gray: #4A5568;
+  --steel-gray-light: #546E7A;
+  --neon-green: #00FF88;
+  --warn-yellow: #FFD700;
 }
 
 body {

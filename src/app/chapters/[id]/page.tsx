@@ -47,45 +47,45 @@ export default async function ChapterPage({
   const renderContent = (content: string) =>
     content.split("\n").map((line, i) => {
       if (line.startsWith("# "))
-        return <h1 key={i} className="text-2xl font-bold text-gray-900 mt-6 mb-4">{line.slice(2)}</h1>;
+        return <h1 key={i} className="text-2xl font-bold text-white mt-6 mb-4">{line.slice(2)}</h1>;
       if (line.startsWith("## "))
-        return <h2 key={i} className="text-xl font-semibold text-gray-900 mt-5 mb-3 border-b border-gray-100 pb-2">{line.slice(3)}</h2>;
+        return <h2 key={i} className="text-xl font-semibold text-white mt-5 mb-3 border-b border-[#4A5568] pb-2">{line.slice(3)}</h2>;
       if (line.startsWith("### "))
-        return <h3 key={i} className="text-lg font-semibold text-gray-800 mt-4 mb-2">{line.slice(4)}</h3>;
+        return <h3 key={i} className="text-lg font-semibold text-gray-200 mt-4 mb-2">{line.slice(4)}</h3>;
       if (line.startsWith("- **")) {
         const parts = line.slice(2).split("**: ");
         return (
-          <li key={i} className="text-gray-700 ml-4 mb-1 list-disc">
+          <li key={i} className="text-gray-300 ml-4 mb-1 list-disc">
             <strong>{parts[0].slice(2)}</strong>
             {parts[1] ? `: ${parts[1]}` : ""}
           </li>
         );
       }
       if (line.startsWith("- "))
-        return <li key={i} className="text-gray-700 ml-4 mb-1 list-disc">{line.slice(2)}</li>;
+        return <li key={i} className="text-gray-300 ml-4 mb-1 list-disc">{line.slice(2)}</li>;
       if (line === "")
         return <div key={i} className="h-2" />;
-      return <p key={i} className="text-gray-700 leading-relaxed mb-2">{line}</p>;
+      return <p key={i} className="text-gray-300 leading-relaxed mb-2">{line}</p>;
     });
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#1A1A1D]">
       <Navbar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
-          <Link href="/chapters" className="hover:text-indigo-600">Chapters</Link>
+        <nav className="text-sm text-[#546E7A] mb-6 flex items-center gap-2">
+          <Link href="/chapters" className="hover:text-[#1E88E5]">Chapters</Link>
           <span>/</span>
-          <span className="text-gray-900 font-medium">{chapter.title}</span>
+          <span className="text-white font-medium">{chapter.title}</span>
         </nav>
 
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-          <div className="bg-indigo-600 px-8 py-6">
-            <span className="text-indigo-200 text-sm font-medium">
+        <div className="bg-[#2D2D30] rounded-2xl shadow-sm border border-[#4A5568] overflow-hidden">
+          <div className="bg-[#1E88E5] px-8 py-6">
+            <span className="text-blue-200 text-sm font-medium">
               Chapter {chapter.order}
             </span>
             <h1 className="text-2xl font-bold text-white mt-1">{chapter.title}</h1>
             {isCompleted && (
-              <span className="inline-flex items-center gap-1 mt-2 text-sm text-green-200">
+              <span className="inline-flex items-center gap-1 mt-2 text-sm text-[#00FF88]">
                 ✓ Completed
               </span>
             )}
@@ -95,12 +95,12 @@ export default async function ChapterPage({
             <div className="max-w-none">{renderContent(chapter.content)}</div>
           </div>
 
-          <div className="border-t border-gray-100 px-8 py-6 bg-gray-50 flex flex-col sm:flex-row justify-between items-center gap-4">
+          <div className="border-t border-[#4A5568] px-8 py-6 bg-[#1A1A1D] flex flex-col sm:flex-row justify-between items-center gap-4">
             <div className="flex gap-3">
               {prevChapter && (
                 <Link
                   href={`/chapters/${prevChapter.id}`}
-                  className="text-gray-600 border border-gray-300 px-4 py-2 rounded-xl text-sm hover:bg-gray-100 transition-colors"
+                  className="text-[#546E7A] border border-[#4A5568] px-4 py-2 rounded-xl text-sm hover:bg-[#3A3A3D] transition-colors"
                 >
                   ← Previous
                 </Link>
@@ -108,7 +108,7 @@ export default async function ChapterPage({
               {nextChapter && (
                 <Link
                   href={`/chapters/${nextChapter.id}`}
-                  className="text-gray-600 border border-gray-300 px-4 py-2 rounded-xl text-sm hover:bg-gray-100 transition-colors"
+                  className="text-[#546E7A] border border-[#4A5568] px-4 py-2 rounded-xl text-sm hover:bg-[#3A3A3D] transition-colors"
                 >
                   Next →
                 </Link>
@@ -125,7 +125,7 @@ export default async function ChapterPage({
               {chapter.quiz && (
                 <Link
                   href={`/chapters/${chapter.id}/quiz`}
-                  className="bg-indigo-600 text-white px-6 py-2 rounded-xl font-medium hover:bg-indigo-700 transition-colors"
+                  className="bg-[#1E88E5] text-white px-6 py-2 rounded-xl font-medium hover:bg-[#1565C0] transition-colors"
                 >
                   Take Quiz →
                 </Link>
