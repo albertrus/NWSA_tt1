@@ -49,7 +49,7 @@ const examDayChecklist = [
 
 export default function StudyGuidePage() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#1A1A1D]">
       <Navbar />
       <main className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm mb-8">
@@ -63,17 +63,17 @@ export default function StudyGuidePage() {
 
         <section className="grid gap-5 mb-8">
           {weeklyPlan.map((item) => (
-            <article key={item.week} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
+            <article key={item.week} className="bg-[#2D2D30] border border-[#4A5568] rounded-2xl p-6 shadow-sm">
               <div className="flex flex-wrap items-center gap-3 mb-3">
-                <span className="bg-indigo-100 text-indigo-700 text-xs font-semibold px-3 py-1 rounded-full">
+                <span className="bg-[#1E88E5]/20 text-[#1E88E5] text-xs font-semibold px-3 py-1 rounded-full">
                   {item.week}
                 </span>
-                <h2 className="text-xl font-semibold text-slate-900">{item.focus}</h2>
+                <h2 className="text-xl font-semibold text-white">{item.focus}</h2>
               </div>
-              <ul className="space-y-2 text-slate-700">
+              <ul className="space-y-2 text-gray-300">
                 {item.goals.map((goal) => (
                   <li key={goal} className="flex gap-2">
-                    <span className="text-indigo-600">•</span>
+                    <span className="text-[#1E88E5]">•</span>
                     <span>{goal}</span>
                   </li>
                 ))}
@@ -82,12 +82,12 @@ export default function StudyGuidePage() {
           ))}
         </section>
 
-        <section className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm mb-8">
-          <h2 className="text-xl font-semibold text-slate-900 mb-4">Exam Week Checklist</h2>
-          <ul className="space-y-2 text-slate-700">
+        <section className="bg-[#2D2D30] border border-[#4A5568] rounded-2xl p-6 shadow-sm mb-8">
+          <h2 className="text-xl font-semibold text-white mb-4">Exam Week Checklist</h2>
+          <ul className="space-y-2 text-gray-300">
             {examDayChecklist.map((item) => (
               <li key={item} className="flex gap-2">
-                <span className="text-emerald-600">✓</span>
+                <span className="text-[#00FF88]">✓</span>
                 <span>{item}</span>
               </li>
             ))}
@@ -97,13 +97,13 @@ export default function StudyGuidePage() {
         <div className="flex flex-wrap gap-4 mt-10">
           <Link
             href="/chapters"
-            className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-indigo-700 transition-colors"
+            className="bg-[#1E88E5] text-white px-5 py-2.5 rounded-xl font-medium hover:bg-[#1565C0] transition-colors"
           >
             Start with Chapters
           </Link>
           <Link
             href="/dashboard"
-            className="bg-white border border-slate-300 text-slate-700 px-5 py-2.5 rounded-xl font-medium hover:bg-slate-100 transition-colors"
+            className="bg-[#2D2D30] border border-[#4A5568] text-gray-300 px-5 py-2.5 rounded-xl font-medium hover:bg-[#3A3A3D] transition-colors"
           >
             Track Progress
           </Link>

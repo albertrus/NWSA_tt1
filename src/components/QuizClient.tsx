@@ -76,26 +76,26 @@ export function QuizClient({
       <main className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div
-            className={`px-8 py-6 ${result.passed ? "bg-green-600" : "bg-red-500"}`}
+            className={`px-8 py-6 ${result.passed ? "bg-[#00FF88]/20 border-b border-[#00FF88]/30" : "bg-[#FF5722]/20 border-b border-[#FF5722]/30"}`}
           >
-            <p className="text-white/80 text-sm font-medium">
+            <p className="text-[#546E7A] text-sm font-medium">
               Chapter {chapterOrder} Quiz
             </p>
-            <h1 className="text-2xl font-bold text-white mt-1">
+            <h1 className={`text-2xl font-bold mt-1 ${result.passed ? "text-[#00FF88]" : "text-white"}`}>
               {result.passed ? "🎉 Quiz Passed!" : "Quiz Complete"}
             </h1>
-            <p className="text-white/90 mt-1">
+            <p className="text-gray-300 mt-1">
               You scored {result.score}/{result.totalQuestions} ({result.percentage}%)
             </p>
             {result.passed && (
-              <p className="text-white/80 text-sm mt-1">
+              <p className="text-[#00FF88]/80 text-sm mt-1">
                 Chapter marked as completed!
               </p>
             )}
           </div>
 
           <div className="px-8 py-6">
-            <h2 className="text-lg font-semibold text-gray-900 mb-4">
+            <h2 className="text-lg font-semibold text-white mb-4">
               Review Your Answers
             </h2>
             <div className="space-y-6">
@@ -104,9 +104,9 @@ export function QuizClient({
                 return (
                   <div
                     key={question.id}
-                    className={`rounded-xl p-4 border ${r.isCorrect ? "border-green-200 bg-green-50" : "border-red-200 bg-red-50"}`}
+                    className={`rounded-xl p-4 border ${r.isCorrect ? "border-[#00FF88]/30 bg-[#00FF88]/10" : "border-[#FF5722]/30 bg-[#FF5722]/10"}`}
                   >
-                    <p className="font-medium text-gray-900 mb-2">
+                    <p className="font-medium text-white mb-2">
                       {i + 1}. {question.text}
                     </p>
                     <div className="space-y-1 mb-2">
@@ -115,10 +115,10 @@ export function QuizClient({
                           key={j}
                           className={`text-sm px-3 py-1.5 rounded-lg ${
                             j === question.correctAnswer
-                              ? "bg-green-100 text-green-800 font-medium"
+                              ? "bg-[#00FF88]/20 text-[#00FF88] font-medium"
                               : j === r.userAnswer && !r.isCorrect
-                                ? "bg-red-100 text-red-800"
-                                : "text-gray-600"
+                                ? "bg-[#FF5722]/20 text-[#FF5722]"
+                                : "text-gray-400"
                           }`}
                         >
                           {j === question.correctAnswer && "✓ "}
@@ -128,7 +128,7 @@ export function QuizClient({
                       ))}
                     </div>
                     {question.explanation && (
-                      <p className="text-sm text-gray-600 italic">
+                      <p className="text-sm text-[#546E7A] italic">
                         {question.explanation}
                       </p>
                     )}
@@ -138,16 +138,16 @@ export function QuizClient({
             </div>
           </div>
 
-          <div className="border-t border-gray-100 px-8 py-5 bg-gray-50 flex gap-3 justify-end">
+          <div className="border-t border-[#4A5568] px-8 py-5 bg-[#1A1A1D] flex gap-3 justify-end">
             <Link
               href={`/chapters/${chapterId}`}
-              className="text-gray-600 border border-gray-300 px-4 py-2 rounded-xl text-sm hover:bg-gray-100 transition-colors"
+              className="text-[#546E7A] border border-[#4A5568] px-4 py-2 rounded-xl text-sm hover:bg-[#3A3A3D] transition-colors"
             >
               Back to Chapter
             </Link>
             <Link
               href="/dashboard"
-              className="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition-colors"
+              className="bg-[#1E88E5] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#1565C0] transition-colors"
             >
               View Dashboard
             </Link>
@@ -166,7 +166,7 @@ export function QuizClient({
           </p>
           <h1 className="text-xl font-bold text-white mt-1">Quiz</h1>
           <div className="flex items-center gap-2 mt-3">
-            <div className="flex-1 bg-indigo-500 rounded-full h-2">
+            <div className="flex-1 bg-[#1565C0] rounded-full h-2">
               <div
                 className="bg-white h-2 rounded-full transition-all duration-300"
                 style={{
@@ -174,14 +174,14 @@ export function QuizClient({
                 }}
               />
             </div>
-            <span className="text-indigo-100 text-sm">
+            <span className="text-blue-100 text-sm">
               {currentQuestion + 1}/{questions.length}
             </span>
           </div>
         </div>
 
         <div className="px-8 py-8">
-          <p className="text-lg font-medium text-gray-900 mb-6">
+          <p className="text-lg font-medium text-white mb-6">
             {currentQuestion + 1}. {q.text}
           </p>
 
@@ -192,8 +192,8 @@ export function QuizClient({
                 onClick={() => selectAnswer(i)}
                 className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all ${
                   answers[currentQuestion] === i
-                    ? "border-indigo-500 bg-indigo-50 text-indigo-700 font-medium"
-                    : "border-gray-200 hover:border-indigo-300 text-gray-700"
+                    ? "border-[#1E88E5] bg-[#1E88E5]/20 text-[#1E88E5] font-medium"
+                    : "border-[#4A5568] hover:border-[#1E88E5] text-gray-300"
                 }`}
               >
                 <span className="font-medium mr-2">
@@ -205,11 +205,11 @@ export function QuizClient({
           </div>
         </div>
 
-        <div className="border-t border-gray-100 px-8 py-5 bg-gray-50 flex justify-between items-center">
+        <div className="border-t border-[#4A5568] px-8 py-5 bg-[#1A1A1D] flex justify-between items-center">
           <button
             onClick={() => setCurrentQuestion((c) => Math.max(0, c - 1))}
             disabled={currentQuestion === 0}
-            className="text-gray-600 border border-gray-300 px-4 py-2 rounded-xl text-sm hover:bg-gray-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="text-[#546E7A] border border-[#4A5568] px-4 py-2 rounded-xl text-sm hover:bg-[#3A3A3D] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             ← Previous
           </button>
@@ -220,7 +220,7 @@ export function QuizClient({
                 setCurrentQuestion((c) => Math.min(questions.length - 1, c + 1))
               }
               disabled={answers[currentQuestion] === null}
-              className="bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="bg-[#1E88E5] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#1565C0] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
               Next →
             </button>
@@ -228,7 +228,7 @@ export function QuizClient({
             <button
               onClick={submitQuiz}
               disabled={!isAllAnswered || submitting}
-              className="bg-green-600 text-white px-6 py-2 rounded-xl text-sm font-medium hover:bg-green-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="bg-[#00FF88] text-[#1A1A1D] px-6 py-2 rounded-xl text-sm font-medium hover:bg-neon-green-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {submitting ? "Submitting..." : "Submit Quiz"}
             </button>
@@ -243,10 +243,10 @@ export function QuizClient({
               onClick={() => setCurrentQuestion(i)}
               className={`w-8 h-8 rounded-full text-xs font-medium transition-colors ${
                 i === currentQuestion
-                  ? "bg-indigo-600 text-white"
+                  ? "bg-[#1E88E5] text-white"
                   : answers[i] !== null
-                    ? "bg-indigo-100 text-indigo-700"
-                    : "bg-gray-100 text-gray-500"
+                    ? "bg-[#1E88E5]/20 text-[#1E88E5]"
+                    : "bg-[#3A3A3D] text-[#546E7A]"
               }`}
             >
               {i + 1}

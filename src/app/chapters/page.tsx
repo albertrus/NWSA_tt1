@@ -23,11 +23,11 @@ export default async function ChaptersPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#111111]">
+    <div className="min-h-screen bg-[#1A1A1D]">
       <Navbar />
       <main className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <h1 className="text-3xl font-bold text-white mb-2">Course Chapters</h1>
-        <p className="text-gray-400 mb-8">
+        <p className="text-[#546E7A] mb-8">
           Work through each chapter and take the quiz to track your progress.
         </p>
 
@@ -40,12 +40,12 @@ export default async function ChaptersPage() {
             return (
               <div
                 key={chapter.id}
-                className={`bg-[#1a1a1a] rounded-2xl p-6 shadow-sm border ${isCompleted ? "border-green-700" : "border-[#333]"} hover:bg-[#2a2a2a] transition-colors`}
+                className={`bg-[#2D2D30] rounded-2xl p-6 shadow-sm border ${isCompleted ? "border-[#00FF88]/40" : "border-[#4A5568]"} hover:bg-[#3A3A3D] transition-colors`}
               >
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div className="flex items-center gap-4">
                     <div
-                      className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold flex-shrink-0 ${isCompleted ? "bg-green-900/50 text-green-400" : "bg-[#FF5500]/20 text-[#FF5500]"}`}
+                      className={`w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold flex-shrink-0 ${isCompleted ? "bg-[#00FF88]/20 text-[#00FF88]" : "bg-[#FF5722]/20 text-[#FF5722]"}`}
                     >
                       {isCompleted ? "✓" : chapter.order}
                     </div>
@@ -53,20 +53,20 @@ export default async function ChaptersPage() {
                       <h2 className="text-lg font-semibold text-white">
                         {chapter.title}
                       </h2>
-                      <p className="text-sm text-gray-400">{chapter.description}</p>
+                      <p className="text-sm text-[#546E7A]">{chapter.description}</p>
                     </div>
                   </div>
                   <div className="flex gap-3">
                     <Link
                       href={`/chapters/${chapter.id}`}
-                      className="bg-[#FF5500] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#e04a00] transition-colors whitespace-nowrap"
+                      className="bg-[#1E88E5] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#1565C0] transition-colors whitespace-nowrap"
                     >
                       {isCompleted ? "Review" : "Study"}
                     </Link>
                     {chapter.quiz && (
                       <Link
                         href={`/chapters/${chapter.id}/quiz`}
-                        className="bg-[#1a1a1a] text-[#FF5500] border border-[#FF5500]/50 px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#FF5500]/10 transition-colors whitespace-nowrap"
+                        className="bg-[#2D2D30] text-[#1E88E5] border border-[#1E88E5]/50 px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#1E88E5]/10 transition-colors whitespace-nowrap"
                       >
                         Quiz
                       </Link>
