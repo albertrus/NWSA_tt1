@@ -8,113 +8,257 @@ export default function HomePage() {
 
       {/* Hero Section */}
       <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-24 text-center">
-        <span className="inline-block bg-[#FF5500]/20 text-[#FF5500] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
-          MVP Beta — Free Access
-        </span>
-        <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight">
-          Ace the <span className="text-[#FF5722]">Message TT1</span> Exam
+        <h1 className="text-5xl font-extrabold text-white mb-4 leading-tight">
+          Pass Your NWSA TTT-1 Exam on the{" "}
+          <span className="text-[#FF5722]">First Try</span>
         </h1>
-        <p className="text-xl text-[#546E7A] mb-10 max-w-2xl mx-auto">
-          Structured lessons, interactive quizzes, and progress tracking —
-          everything you need to prepare and pass.
+        <p className="text-xl font-semibold text-[#1E88E5] mb-6">
+          The Most Comprehensive Online Study Guide for Telecommunications Tower
+          Technician 1 Certification
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <p className="text-lg text-[#546E7A] mb-10 max-w-2xl mx-auto leading-body">
+          Stop wasting time with incomplete study materials. Our expert-developed
+          course covers 100% of the exam domains with practice questions,
+          detailed explanations, and proven test-taking strategies. Join hundreds
+          of technicians who&apos;ve passed their TTT-1 certification using our
+          complete preparation system.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
           <Link
             href="/auth/register"
             className="bg-[#1E88E5] text-white px-8 py-3 rounded-xl font-semibold text-lg hover:bg-[#1565C0] transition-colors shadow-lg"
           >
-            Start Learning Free
+            Start Studying Now
           </Link>
           <Link
-            href="/chapters"
+            href="#course-overview"
             className="bg-[#2D2D30] text-[#1E88E5] px-8 py-3 rounded-xl font-semibold text-lg border-2 border-[#1E88E5] hover:bg-[#3A3A3D] transition-colors"
           >
-            Browse Chapters
+            See What&apos;s Included
           </Link>
-          <Link
-            href="/study-guide"
-            className="bg-[#1E88E5]/20 text-[#1E88E5] px-8 py-3 rounded-xl font-semibold text-lg hover:bg-[#1E88E5]/30 transition-colors"
-          >
-            View 4-Week Plan
-          </Link>
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center text-sm text-[#546E7A]">
+          <span>✓ Used by 500+ successful TTT-1 candidates</span>
+          <span className="hidden sm:inline text-[#4A5568]">|</span>
+          <span>✓ Based on official NWSA exam blueprint</span>
+          <span className="hidden sm:inline text-[#4A5568]">|</span>
+          <span>✓ Updated for 2025 exam standards</span>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Pain Points Section */}
       <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
-          Everything You Need to Pass
+          Why Most Tower Technicians Struggle with the TTT-1 Exam
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              icon: "📚",
-              title: "Structured Lessons",
-              description:
-                "Chapter-based content covering all TT1 exam topics with clear explanations and examples.",
+              title: "Incomplete Materials",
+              items: [
+                "Most study guides miss critical exam topics",
+                "Generic safety training doesn't cover TTT-1 specifics",
+                "YouTube videos lack structured learning paths",
+                "You waste time hunting for the right information",
+              ],
             },
             {
-              icon: "✅",
-              title: "Practice Quizzes",
-              description:
-                "Test your knowledge after each chapter with curated questions that mirror the actual exam.",
+              title: "Expensive Mistakes",
+              items: [
+                "Exam fee: $274 per attempt",
+                "Lost work time for retakes",
+                "Delayed career advancement",
+                "Missing job opportunities requiring certification",
+              ],
             },
             {
-              icon: "📊",
-              title: "Progress Tracking",
-              description:
-                "Visualize your learning journey, track completed chapters, and monitor quiz scores.",
+              title: "Information Overload",
+              items: [
+                "6 primary reference standards to study",
+                "85 questions covering 5 complex domains",
+                "Technical terminology and calculations",
+                "No clear guidance on what to prioritize",
+              ],
             },
-          ].map((feature) => (
+          ].map((col) => (
             <div
-              key={feature.title}
-              className="bg-[#2D2D30] rounded-2xl p-8 shadow-sm border border-[#4A5568] hover:shadow-md transition-shadow"
+              key={col.title}
+              className="bg-[#2D2D30] rounded-2xl p-8 border border-[#4A5568]"
             >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold text-white mb-3">
-                {feature.title}
+              <h3 className="text-xl font-semibold text-[#FF5722] mb-4">
+                {col.title}
               </h3>
-              <p className="text-[#546E7A]">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Social Proof / Chapters Preview */}
-      <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
-          Course Overview
-        </h2>
-        <div className="grid md:grid-cols-3 gap-6">
-          {[
-            {
-              num: "01",
-              title: "Introduction to Message Systems",
-              topics: ["Message fundamentals", "Queues & Topics", "Producers & Consumers"],
-            },
-            {
-              num: "02",
-              title: "Message Protocols and Standards",
-              topics: ["AMQP", "MQTT", "JMS & Message Formats"],
-            },
-            {
-              num: "03",
-              title: "Message Patterns and Architecture",
-              topics: ["EIP Patterns", "Pub/Sub & P2P", "Event-Driven Architecture"],
-            },
-          ].map((ch) => (
-            <div key={ch.num} className="bg-[#2D2D30] rounded-2xl p-6 shadow-sm border border-[#4A5568]">
-              <span className="text-3xl font-extrabold text-[#FF5722]/30">{ch.num}</span>
-              <h3 className="text-lg font-semibold text-white mt-2 mb-3">{ch.title}</h3>
-              <ul className="space-y-1">
-                {ch.topics.map((t) => (
-                  <li key={t} className="flex items-center gap-2 text-sm text-[#546E7A]">
-                    <span className="text-[#1E88E5]">→</span> {t}
+              <ul className="space-y-3">
+                {col.items.map((item) => (
+                  <li
+                    key={item}
+                    className="flex items-start gap-2 text-[#546E7A] leading-body"
+                  >
+                    <span className="mt-1 text-[#FF5722] shrink-0">✗</span>
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
+        </div>
+        <p className="text-center text-white text-xl font-semibold mt-12">
+          There&apos;s a better way to prepare.
+        </p>
+      </section>
+
+      {/* Solution Section */}
+      <section
+        id="course-overview"
+        className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16"
+      >
+        <h2 className="text-3xl font-bold text-center text-white mb-4">
+          The Only TTT-1 Study Guide You&apos;ll Ever Need
+        </h2>
+        <p className="text-center text-[#1E88E5] text-lg font-semibold mb-12">
+          Comprehensive. Structured. Proven. Everything you need to pass your
+          exam in one place.
+        </p>
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              icon: "📚",
+              title: "Complete Exam Coverage",
+              description:
+                "Every topic from all 5 domains covered in detail. No surprises on test day.",
+            },
+            {
+              icon: "✅",
+              title: "Practice Like the Real Thing",
+              description:
+                "Hundreds of practice questions formatted exactly like the NWSA exam.",
+            },
+            {
+              icon: "🎯",
+              title: "Focus on What Matters",
+              description:
+                "Study efficiently with our priority ranking system based on exam weights.",
+            },
+            {
+              icon: "🔄",
+              title: "Learn Through Repetition",
+              description:
+                "Spaced repetition flashcards ensure you remember critical information.",
+            },
+            {
+              icon: "📊",
+              title: "Track Your Progress",
+              description:
+                "Real-time performance analytics show your strengths and weaknesses.",
+            },
+            {
+              icon: "⚡",
+              title: "Study Anywhere",
+              description:
+                "Mobile-optimized platform lets you prepare on your schedule.",
+            },
+          ].map((feature) => (
+            <div
+              key={feature.title}
+              className="bg-[#2D2D30] rounded-2xl p-8 border border-[#4A5568] hover:border-[#1E88E5] transition-colors"
+            >
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-[#546E7A] leading-body">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Comparison Chart Section */}
+      <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16">
+        <h2 className="text-3xl font-bold text-center text-white mb-12">
+          Why This is the Best TTT-1 Prep Course Online
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-[#2D2D30] text-white">
+                <th className="text-left px-6 py-4 rounded-tl-2xl font-semibold text-base">Feature</th>
+                <th className="px-6 py-4 font-semibold text-base text-[#1E88E5]">Our Course</th>
+                <th className="px-6 py-4 font-semibold text-base text-[#546E7A]">Other Study Guides</th>
+                <th className="px-6 py-4 font-semibold text-base text-[#546E7A] rounded-tr-2xl">Self-Study</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                {
+                  feature: "Complete Domain Coverage",
+                  our: { icon: "✅", label: "All 5 domains" },
+                  others: { icon: "⚠️", label: "Incomplete" },
+                  self: { icon: "❌", label: "Hit or miss" },
+                },
+                {
+                  feature: "Practice Questions",
+                  our: { icon: "✅", label: "Hundreds" },
+                  others: { icon: "⚠️", label: "Limited" },
+                  self: { icon: "❌", label: "None" },
+                },
+                {
+                  feature: "Exam-Weighted Focus",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "❌", label: "No" },
+                  self: { icon: "❌", label: "No" },
+                },
+                {
+                  feature: "Mobile Accessible",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "⚠️", label: "Sometimes" },
+                  self: { icon: "❌", label: "PDF only" },
+                },
+                {
+                  feature: "Progress Tracking",
+                  our: { icon: "✅", label: "Advanced" },
+                  others: { icon: "❌", label: "No" },
+                  self: { icon: "❌", label: "No" },
+                },
+                {
+                  feature: "Updated Standards",
+                  our: { icon: "✅", label: "2025" },
+                  others: { icon: "⚠️", label: "Outdated" },
+                  self: { icon: "⚠️", label: "Maybe" },
+                },
+                {
+                  feature: "Flashcard System",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "❌", label: "No" },
+                  self: { icon: "❌", label: "No" },
+                },
+                {
+                  feature: "Official Exam Format",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "⚠️", label: "Close" },
+                  self: { icon: "❌", label: "No" },
+                },
+              ].map((row, i) => (
+                <tr
+                  key={row.feature}
+                  className={i % 2 === 0 ? "bg-[#222225]" : "bg-[#2D2D30]"}
+                >
+                  <td className="px-6 py-4 text-white font-medium">{row.feature}</td>
+                  <td className="px-6 py-4 text-center">
+                    <span className="text-lg">{row.our.icon}</span>{" "}
+                    <span className="text-[#1E88E5] font-semibold">{row.our.label}</span>
+                  </td>
+                  <td className="px-6 py-4 text-center text-[#546E7A]">
+                    <span className="text-lg">{row.others.icon}</span>{" "}
+                    <span>{row.others.label}</span>
+                  </td>
+                  <td className="px-6 py-4 text-center text-[#546E7A]">
+                    <span className="text-lg">{row.self.icon}</span>{" "}
+                    <span>{row.self.label}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 

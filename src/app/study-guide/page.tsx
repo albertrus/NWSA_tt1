@@ -1,50 +1,105 @@
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
 
-const weeklyPlan = [
+const modules = [
   {
-    week: "Week 1",
-    focus: "Messaging Fundamentals",
-    goals: [
-      "Complete Chapter 1 and understand queue vs topic deeply",
-      "Write summary notes for producer, consumer, and broker roles",
-      "Take the Chapter 1 quiz until you score at least 80%",
+    number: "Module 1",
+    title: "Planning the Scope of Work and Job Logistics",
+    examPercent: 15,
+    questions: 13,
+    priority: false,
+    topics: [
+      "Interpret construction drawings and site documentation",
+      "Conduct DOT pre-trip inspections",
+      "Master job site logistics and inventory management",
+      "Understand safety documentation (JHA, EAP, site authorization)",
+      "Recognize and respond to changing site conditions",
     ],
+    note: "13 questions on your exam will come from this domain",
   },
   {
-    week: "Week 2",
-    focus: "Protocols & Standards",
-    goals: [
-      "Complete Chapter 2 and compare AMQP, MQTT, and JMS",
-      "Create a one-page cheatsheet for QoS levels and delivery guarantees",
-      "Retake Chapter 2 quiz and review every explanation",
+    number: "Module 2",
+    title: "Fall Protection Climber–Rescuer",
+    examPercent: 30,
+    questions: 26,
+    priority: true,
+    topics: [
+      "Inspect all PPE including harnesses, connecting devices, and helmets",
+      "Perform suspension rescue operations",
+      "Master proper tool tethering techniques",
+      "Learn correct climbing techniques and body positioning",
+      "Understand controlled descent equipment and hazards",
+      "Follow portable ladder safety requirements",
     ],
+    note: "26 questions on your exam will come from this domain - YOUR HIGHEST PRIORITY",
   },
   {
-    week: "Week 3",
-    focus: "Patterns & Architecture",
-    goals: [
-      "Complete Chapter 3 and map each pattern to a real-world use case",
-      "Practice identifying when to use P2P vs Pub/Sub",
-      "Score at least 80% on Chapter 3 quiz",
+    number: "Module 3",
+    title: "Hoisting Equipment and Rigging",
+    examPercent: 20,
+    questions: 17,
+    priority: false,
+    topics: [
+      "Inspect ropes, slings, and shackles",
+      "Master rigging operations and pre-lift procedures",
+      "Learn hand signals and load classifications",
+      "Tie critical knots: Bowline, Figure 8, Clove hitch",
+      "Understand different hoist types (base mount, man-rated, capstan)",
+      "Know personnel hoisting operations and crew responsibilities",
     ],
+    note: "17 questions on your exam will come from this domain",
   },
   {
-    week: "Week 4",
-    focus: "Revision & Exam Readiness",
-    goals: [
-      "Revisit low-scoring quiz questions from all chapters",
-      "Do a timed full review of all chapter notes in one sitting",
-      "Aim for three consecutive passing quiz runs (70%+) across chapters",
+    number: "Module 4",
+    title: "Structures",
+    examPercent: 15,
+    questions: 13,
+    priority: false,
+    topics: [
+      "Identify structure types: guyed, self-supporting, monopole",
+      "Recognize non-standard structures (utility poles, water tanks, stealth)",
+      "Understand rooftop installations",
+      "Identify structure deficiencies and maintenance needs",
+      "Assist in structural component assembly",
     ],
+    note: "13 questions on your exam will come from this domain",
+  },
+  {
+    number: "Module 5",
+    title: "Appurtenance Installation and Maintenance",
+    examPercent: 20,
+    questions: 17,
+    priority: false,
+    topics: [
+      "Install antennas, tower lighting, and remote radio units",
+      "Align and position microwave dishes and mounting hardware",
+      "Work with fiber optic, coax, RET, and grounding cables",
+      "Master weatherproofing techniques",
+      "Install grounding systems properly",
+      "Perform line sweeps and signal quality tests",
+      "Understand FAA lighting obstruction requirements",
+    ],
+    note: "17 questions on your exam will come from this domain",
   },
 ];
 
-const examDayChecklist = [
-  "Review core messaging patterns (P2P, Pub/Sub, Request/Reply, DLQ)",
-  "Memorize key protocol strengths and trade-offs",
-  "Practice eliminating wrong answers before selecting the best option",
-  "Sleep early and plan exam login/setup at least 20 minutes ahead",
+const bonusMaterials = [
+  {
+    title: "Complete Reference Library",
+    description: "Direct links to all 6 primary standards (ANSI/ASSE A10.48, OSHA, Z359, etc.)",
+  },
+  {
+    title: "Quick Reference Guides",
+    description: "Downloadable cheat sheets for knots, hand signals, and equipment specs",
+  },
+  {
+    title: "Exam Day Checklist",
+    description: "Everything you need to know before, during, and after your exam",
+  },
+  {
+    title: "Critical Numbers to Memorize",
+    description: "Anchorage strengths, minimum requirements, and key calculations",
+  },
 ];
 
 export default function StudyGuidePage() {
@@ -52,43 +107,63 @@ export default function StudyGuidePage() {
     <div className="min-h-screen bg-[#1A1A1D]">
       <Navbar />
       <main className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
-        <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm mb-8">
-          <p className="text-sm font-semibold text-indigo-600 mb-2">Training Guide</p>
-          <h1 className="text-3xl font-bold text-slate-900 mb-3">NWSA TT1 4-Week Study Plan</h1>
-          <p className="text-slate-600 max-w-3xl">
-            Use this roadmap to study consistently, reinforce weak topics, and build exam confidence.
-            Pair this plan with chapter quizzes and dashboard progress tracking.
+        {/* Header */}
+        <div className="bg-[#2D2D30] border border-[#4A5568] rounded-2xl p-8 shadow-sm mb-8">
+          <p className="text-sm font-semibold text-[#1E88E5] mb-2">Course Overview Section</p>
+          <h1 className="text-3xl font-bold text-white mb-3">What You&apos;ll Master in This Course</h1>
+          <p className="text-gray-300 max-w-3xl">
+            Our curriculum follows the official NWSA exam blueprint, ensuring you&apos;re prepared for every question.
           </p>
         </div>
 
-        <section className="grid gap-5 mb-8">
-          {weeklyPlan.map((item) => (
-            <article key={item.week} className="bg-[#2D2D30] border border-[#4A5568] rounded-2xl p-6 shadow-sm">
+        {/* Domain Breakdown */}
+        <h2 className="text-xl font-bold text-white mb-5">Domain Breakdown</h2>
+        <section className="grid gap-5 mb-10">
+          {modules.map((mod) => (
+            <article
+              key={mod.number}
+              className={`bg-[#2D2D30] border rounded-2xl p-6 shadow-sm ${
+                mod.priority ? "border-[#1E88E5]" : "border-[#4A5568]"
+              }`}
+            >
               <div className="flex flex-wrap items-center gap-3 mb-3">
                 <span className="bg-[#1E88E5]/20 text-[#1E88E5] text-xs font-semibold px-3 py-1 rounded-full">
-                  {item.week}
+                  {mod.number}
                 </span>
-                <h2 className="text-xl font-semibold text-white">{item.focus}</h2>
+                <span className="bg-[#FF5722]/20 text-[#FF5722] text-xs font-semibold px-3 py-1 rounded-full">
+                  {mod.examPercent}% of Exam
+                </span>
+                {mod.priority && (
+                  <span className="bg-[#1E88E5] text-white text-xs font-semibold px-3 py-1 rounded-full">
+                    HIGHEST PRIORITY
+                  </span>
+                )}
               </div>
-              <ul className="space-y-2 text-gray-300">
-                {item.goals.map((goal) => (
-                  <li key={goal} className="flex gap-2">
-                    <span className="text-[#1E88E5]">•</span>
-                    <span>{goal}</span>
+              <h3 className="text-lg font-semibold text-white mb-3">{mod.title}</h3>
+              <ul className="space-y-2 text-gray-300 mb-4">
+                {mod.topics.map((topic) => (
+                  <li key={topic} className="flex gap-2">
+                    <span className="text-[#1E88E5] mt-0.5">•</span>
+                    <span>{topic}</span>
                   </li>
                 ))}
               </ul>
+              <p className="text-sm font-semibold text-[#00FF88]">{mod.note}</p>
             </article>
           ))}
         </section>
 
+        {/* Bonus Materials */}
         <section className="bg-[#2D2D30] border border-[#4A5568] rounded-2xl p-6 shadow-sm mb-8">
-          <h2 className="text-xl font-semibold text-white mb-4">Exam Week Checklist</h2>
-          <ul className="space-y-2 text-gray-300">
-            {examDayChecklist.map((item) => (
-              <li key={item} className="flex gap-2">
-                <span className="text-[#00FF88]">✓</span>
-                <span>{item}</span>
+          <h2 className="text-xl font-semibold text-white mb-4">Bonus Materials Included</h2>
+          <ul className="space-y-3 text-gray-300">
+            {bonusMaterials.map((item) => (
+              <li key={item.title} className="flex gap-3">
+                <span className="text-[#00FF88] font-bold mt-0.5">✓</span>
+                <span>
+                  <span className="text-white font-semibold">{item.title}</span>{" "}
+                  {item.description}
+                </span>
               </li>
             ))}
           </ul>
