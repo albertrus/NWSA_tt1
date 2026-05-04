@@ -128,8 +128,8 @@ export default async function DashboardPage() {
         {quizAttempts.length > 0 && (
           <>
             <h2 className="text-xl font-bold text-white mb-4">Recent Quiz Attempts</h2>
-            <div className="bg-[#1a1a1a] rounded-2xl shadow-sm border border-[#333] overflow-hidden">
-              <table className="w-full">
+            <div className="bg-[#1a1a1a] rounded-2xl shadow-sm border border-[#333] overflow-x-auto">
+              <table className="w-full min-w-[480px]">
                 <thead className="bg-[#222] border-b border-[#333]">
                   <tr>
                     <th className="text-left px-6 py-3 text-sm font-medium text-gray-400">Quiz</th>

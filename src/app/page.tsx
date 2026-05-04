@@ -7,14 +7,14 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-20 xl:py-32 text-center">
         <span className="inline-block bg-[#FF5500]/20 text-[#FF5500] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
           MVP Beta — Free Access
         </span>
-        <h1 className="text-5xl font-extrabold text-white mb-6 leading-tight">
+        <h1 className="text-3xl md:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-tight">
           Ace the <span className="text-[#FF5500]">Message TT1</span> Exam
         </h1>
-        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl xl:max-w-3xl mx-auto">
           Structured lessons, interactive quizzes, and progress tracking —
           everything you need to prepare and pass.
         </p>
@@ -41,8 +41,8 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 xl:py-24">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">
           Everything You Need to Pass
         </h2>
         <div className="grid md:grid-cols-3 gap-8">
@@ -81,8 +81,8 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Chapters Preview */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 xl:py-24">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-white mb-12">
           Course Overview
         </h2>
         <div className="grid md:grid-cols-3 gap-6">
@@ -119,9 +119,9 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-[#FF5500] text-white py-16 mt-8">
+      <section className="bg-[#FF5500] text-white py-12 md:py-16 mt-8">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-orange-100 text-lg mb-8">
             Join students already preparing for the TT1 exam. Create your free account today.
           </p>
