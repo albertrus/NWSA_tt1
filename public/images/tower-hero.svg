@@ -72,8 +72,8 @@
   <circle cx="120" cy="22" r="4" fill="#ffffff" opacity="0.5"/>
 
   <!-- Signal arcs emanating from top -->
-  <path d="M 130 22 Q 155 10 155 -5" fill="none" stroke="#1E88E5" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="3 2"/>
-  <path d="M 132 25 Q 162 15 165 2" fill="none" stroke="#1E88E5" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 2"/>
-  <path d="M 110 22 Q 85 10 85 -5" fill="none" stroke="#1E88E5" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="3 2"/>
-  <path d="M 108 25 Q 78 15 75 2" fill="none" stroke="#1E88E5" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 2"/>
+  <path d="M 130 28 Q 155 18 155 8" fill="none" stroke="#1E88E5" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="3 2"/>
+  <path d="M 132 32 Q 162 22 165 12" fill="none" stroke="#1E88E5" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 2"/>
+  <path d="M 110 28 Q 85 18 85 8" fill="none" stroke="#1E88E5" stroke-width="1.5" stroke-opacity="0.5" stroke-dasharray="3 2"/>
+  <path d="M 108 32 Q 78 22 75 12" fill="none" stroke="#1E88E5" stroke-width="1" stroke-opacity="0.35" stroke-dasharray="3 2"/>
 </svg>

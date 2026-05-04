@@ -156,7 +156,14 @@ export default function StudyGuidePage() {
               }`}
             >
               <div className="flex flex-wrap items-center gap-3 mb-3">
-                <span className={`flex items-center justify-center w-12 h-12 rounded-xl flex-shrink-0 ${mod.priority ? "bg-[#1E88E5]/20 text-[#1E88E5]" : "bg-[#4A5568]/30 text-[#546E7A]"}`}>
+                <span
+                  className={[
+                    "flex items-center justify-center w-12 h-12 rounded-xl flex-shrink-0",
+                    mod.priority
+                      ? "bg-[#1E88E5]/20 text-[#1E88E5]"
+                      : "bg-[#4A5568]/30 text-[#546E7A]",
+                  ].join(" ")}
+                >
                   {moduleIcons[mod.number]}
                 </span>
                 <span className="bg-[#1E88E5]/20 text-[#1E88E5] text-xs font-semibold px-3 py-1 rounded-full">
