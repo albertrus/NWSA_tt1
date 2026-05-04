@@ -30,76 +30,35 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
-      <div className="max-w-container mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex justify-between h-16 items-center">
-          <Link href="/" className="text-xl font-bold tracking-tight">
-            NWSA TT1 Prep
-          </Link>
+    <>
+      <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
+        <div className="max-w-container mx-auto px-6 sm:px-10 lg:px-16">
+          <div className="flex justify-between h-16 items-center">
+            <Link href="/" className="text-xl font-bold tracking-tight">
+              NWSA TT1 Prep
+            </Link>
 
-          <div className="hidden md:flex items-center space-x-6">
-            {session ? (
-              <>
-                <Link
-                  href="/dashboard"
-                  className="hover:text-[#1E88E5] transition-colors"
-                >
-                  Dashboard
-                </Link>
-                <Link
-                  href="/chapters"
-                  className="hover:text-[#1E88E5] transition-colors"
-                >
-                  Chapters
-                </Link>
-                <Link
-                  href="/study-guide"
-                  className="hover:text-[#1E88E5] transition-colors"
-                >
-                  Study Guide
-                </Link>
-                <button
-                  onClick={() => signOut({ callbackUrl: "/" })}
-                  className="bg-[#1E88E5] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#1565C0] transition-colors"
-                >
-                  Sign Out
-                </button>
-              </>
-            ) : (
-              <>
-                <Link
-                  href="/study-guide"
-                  className="hover:text-[#1E88E5] transition-colors"
-                >
-                  Study Guide
-                </Link>
-                <Link
-                  href="/auth/login"
-                  className="hover:text-[#1E88E5] transition-colors"
-                >
-                  Sign In
-                </Link>
-                <Link
-                  href="/auth/register"
-                  className="bg-[#1E88E5] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#1565C0] transition-colors"
-                >
-                  Get Started
-                </Link>
-              </>
-            )}
-          </div>
-
+            <div className="hidden md:flex items-center space-x-6">
+              {session ? (
+                <>
+                  <Link href="/dashboard" className="hover:text-[#FF5500] transition-colors">
+                    Dashboard
+                  </Link>
+                  <Link href="/chapters" className="hover:text-[#FF5500] transition-colors">
+                    Chapters
+                  </Link>
+                  <Link href="/study-guide" className="hover:text-[#FF5500] transition-colors">
+                    Study Guide
+                  </Link>
                   {/* Exam readiness inline */}
                   <div className="flex items-center gap-2 pl-3 border-l border-white/20">
                     <span className="text-gray-400 text-xs">Readiness</span>
                     <span className="text-[#FF5500] font-semibold text-sm">{readiness}%</span>
                   </div>
-
                   <button
                     onClick={() => signOut({ callbackUrl: "/" })}
                     className="flex items-center gap-1.5 bg-[#FF5500] text-white px-3 py-1.5 rounded-lg font-medium hover:bg-[#e04a00] transition-colors"
                   >
-                    {/* Logout icon */}
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
                     </svg>
@@ -182,7 +141,6 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -193,7 +151,6 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/chapters"
-                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -204,7 +161,6 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/study-guide"
-                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -213,18 +169,11 @@ export function Navbar() {
                   </svg>
                   Study Guide
                 </Link>
-                <button
-                  onClick={() => signOut({ callbackUrl: "/" })}
-                  className="block py-2 hover:text-[#1E88E5]"
-                >
-                  Sign Out
-                </button>
               </>
             ) : (
               <>
                 <Link
                   href="/study-guide"
-                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -235,7 +184,6 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/auth/login"
-                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -246,7 +194,6 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -259,7 +206,7 @@ export function Navbar() {
             )}
           </nav>
 
-          {/* Footer — exam readiness or sign out */}
+          {/* Footer — exam readiness and sign out */}
           <div className="px-6 py-6 border-t border-white/10 space-y-4">
             {session && (
               <>
