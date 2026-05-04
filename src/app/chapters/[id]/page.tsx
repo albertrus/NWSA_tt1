@@ -71,7 +71,7 @@ export default async function ChapterPage({
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <nav className="text-sm text-gray-500 mb-6 flex items-center gap-2">
           <Link href="/chapters" className="hover:text-indigo-600">Chapters</Link>
           <span>/</span>

@@ -21,6 +21,12 @@ const config: Config = {
         "surface-elevated": "#222222",
         "surface-hover": "#2a2a2a",
       },
+      maxWidth: {
+        container: "1400px",
+      },
+      lineHeight: {
+        body: "1.65",
+      },
     },
   },
   plugins: [],

@@ -25,13 +25,13 @@ export default async function ChaptersPage() {
   return (
     <div className="min-h-screen bg-[#111111]">
       <Navbar />
-      <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <h1 className="text-3xl font-bold text-white mb-2">Course Chapters</h1>
         <p className="text-gray-400 mb-8">
           Work through each chapter and take the quiz to track your progress.
         </p>
 
-        <div className="space-y-4">
+        <div className="space-y-5">
           {chapters.map((chapter) => {
             const isCompleted = progress.some(
               (p) => p.chapterId === chapter.id && p.completed
