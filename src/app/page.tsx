@@ -29,7 +29,7 @@ export default function HomePage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
               <Link
-                href="/auth/register"
+                href="https://nwsa-tt1.vercel.app/auth/register"
                 className="bg-[#1E88E5] text-white px-8 py-3 rounded-xl font-semibold text-lg hover:bg-[#1565C0] transition-colors shadow-lg"
               >
                 Start Studying Now
