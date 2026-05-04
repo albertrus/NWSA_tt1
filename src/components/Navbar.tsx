@@ -14,7 +14,7 @@ export function Navbar() {
     fetch("/api/progress/summary")
       .then((r) => r.json())
       .then((d) => setReadiness(d.percentage ?? 0))
-      .catch(() => {});
+      .catch((err) => console.error("Failed to fetch progress summary:", err));
   }, [session]);
 
   // Prevent body scroll when mobile menu is open
@@ -36,7 +36,7 @@ export function Navbar() {
           <div className="flex justify-between h-14 items-center">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
-              {/* Signal / wave icon */}
+              {/* Menu bars / brand icon */}
               <svg className="w-5 h-5 text-[#FF5500]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5M3.75 6h16.5M3.75 18h16.5" />
               </svg>

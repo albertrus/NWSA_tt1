@@ -19,7 +19,8 @@ export async function GET() {
 
     const percentage = total ? Math.round((completed / total) * 100) : 0;
     return NextResponse.json({ percentage, completed, total });
-  } catch {
+  } catch (err) {
+    console.error("Failed to fetch progress summary:", err);
     return NextResponse.json({ percentage: 0, completed: 0, total: 0 });
   }
 }

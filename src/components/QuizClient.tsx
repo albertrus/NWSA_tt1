@@ -49,7 +49,6 @@ export function QuizClient({
   const [submitting, setSubmitting] = useState(false);
   const router = useRouter();
 
-  // Touch swipe tracking
   const touchStartX = useRef<number | null>(null);
 
   const handleTouchStart = (e: React.TouchEvent) => {
@@ -60,11 +59,12 @@ export function QuizClient({
     if (touchStartX.current === null) return;
     const delta = e.changedTouches[0].clientX - touchStartX.current;
     touchStartX.current = null;
-    const THRESHOLD = 60;
-    if (delta < -THRESHOLD && currentQuestion < questions.length - 1) {
+    // Minimum pixel distance to recognise a swipe gesture
+    const SWIPE_THRESHOLD_PX = 60;
+    if (delta < -SWIPE_THRESHOLD_PX && currentQuestion < questions.length - 1) {
       // Swipe left → next
       setCurrentQuestion((c) => c + 1);
-    } else if (delta > THRESHOLD && currentQuestion > 0) {
+    } else if (delta > SWIPE_THRESHOLD_PX && currentQuestion > 0) {
       // Swipe right → previous
       setCurrentQuestion((c) => c - 1);
     }
