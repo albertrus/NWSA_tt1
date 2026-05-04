@@ -228,7 +228,7 @@ export function QuizClient({
             <button
               onClick={submitQuiz}
               disabled={!isAllAnswered || submitting}
-              className="bg-[#00FF88] text-[#1A1A1D] px-6 py-2 rounded-xl text-sm font-medium hover:bg-[#00e07a] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              className="bg-[#00FF88] text-[#1A1A1D] px-6 py-2 rounded-xl text-sm font-medium hover:bg-neon-green-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
               {submitting ? "Submitting..." : "Submit Quiz"}
             </button>

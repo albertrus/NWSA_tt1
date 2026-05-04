@@ -23,10 +23,11 @@ const config: Config = {
         "steel-gray-light": "#546E7A",
         // Accent Colors
         "neon-green": "#00FF88",
+        "neon-green-dark": "#00e07a",
         "warn-yellow": "#FFD700",
         // Surface aliases
         surface: "#2D2D30",
-        "surface-elevated": "#3A3A3D",
+        "surface-elevated": "#2D2D30",
         "surface-hover": "#3A3A3D",
       },
     },
