@@ -39,7 +39,7 @@ export default async function QuizPage({
   }));
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-[#1A1A1D]">
       <Navbar />
       <QuizClient
         quizId={chapter.quiz.id}

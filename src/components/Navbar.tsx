@@ -30,44 +30,64 @@ export function Navbar() {
   }, [menuOpen]);
 
   return (
-    <>
-      <nav className="sticky top-0 z-40 bg-black/60 backdrop-blur-md border-b border-white/10 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between h-14 items-center">
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
-              {/* Menu bars / brand icon */}
-              <svg className="w-5 h-5 text-[#FF5500]" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5M3.75 6h16.5M3.75 18h16.5" />
-              </svg>
-              NWSA TT1 Prep
-            </Link>
+    <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
+      <div className="max-w-container mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="flex justify-between h-16 items-center">
+          <Link href="/" className="text-xl font-bold tracking-tight">
+            NWSA TT1 Prep
+          </Link>
 
-            {/* Desktop links */}
-            <div className="hidden md:flex items-center space-x-6 text-sm">
-              {session ? (
-                <>
-                  <Link href="/dashboard" className="flex items-center gap-1.5 hover:text-[#FF5500] transition-colors">
-                    {/* Grid icon */}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-                    </svg>
-                    Dashboard
-                  </Link>
-                  <Link href="/chapters" className="flex items-center gap-1.5 hover:text-[#FF5500] transition-colors">
-                    {/* Book icon */}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
-                    </svg>
-                    Chapters
-                  </Link>
-                  <Link href="/study-guide" className="flex items-center gap-1.5 hover:text-[#FF5500] transition-colors">
-                    {/* Document icon */}
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
-                    </svg>
-                    Study Guide
-                  </Link>
+          <div className="hidden md:flex items-center space-x-6">
+            {session ? (
+              <>
+                <Link
+                  href="/dashboard"
+                  className="hover:text-[#1E88E5] transition-colors"
+                >
+                  Dashboard
+                </Link>
+                <Link
+                  href="/chapters"
+                  className="hover:text-[#1E88E5] transition-colors"
+                >
+                  Chapters
+                </Link>
+                <Link
+                  href="/study-guide"
+                  className="hover:text-[#1E88E5] transition-colors"
+                >
+                  Study Guide
+                </Link>
+                <button
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  className="bg-[#1E88E5] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#1565C0] transition-colors"
+                >
+                  Sign Out
+                </button>
+              </>
+            ) : (
+              <>
+                <Link
+                  href="/study-guide"
+                  className="hover:text-[#1E88E5] transition-colors"
+                >
+                  Study Guide
+                </Link>
+                <Link
+                  href="/auth/login"
+                  className="hover:text-[#1E88E5] transition-colors"
+                >
+                  Sign In
+                </Link>
+                <Link
+                  href="/auth/register"
+                  className="bg-[#1E88E5] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#1565C0] transition-colors"
+                >
+                  Get Started
+                </Link>
+              </>
+            )}
+          </div>
 
                   {/* Exam readiness inline */}
                   <div className="flex items-center gap-2 pl-3 border-l border-white/20">
@@ -162,6 +182,7 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -172,6 +193,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/chapters"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -182,6 +204,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/study-guide"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -190,11 +213,18 @@ export function Navbar() {
                   </svg>
                   Study Guide
                 </Link>
+                <button
+                  onClick={() => signOut({ callbackUrl: "/" })}
+                  className="block py-2 hover:text-[#1E88E5]"
+                >
+                  Sign Out
+                </button>
               </>
             ) : (
               <>
                 <Link
                   href="/study-guide"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -205,6 +235,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/auth/login"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
@@ -215,6 +246,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/auth/register"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center gap-3 px-3 py-3 rounded-xl text-white hover:bg-white/10 transition-colors"
                 >
