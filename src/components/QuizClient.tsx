@@ -180,6 +180,7 @@ export function QuizClient({
 
   const selectedAnswer = answers[currentQuestion];
 
+
   return (
     <main
       className="px-4 sm:px-6 lg:px-8 py-6 max-w-7xl mx-auto"
@@ -202,25 +203,6 @@ export function QuizClient({
                 width: `${((currentQuestion + 1) / questions.length) * 100}%`,
               }}
             />
-    <main className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
-      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-        <div className="bg-indigo-600 px-8 py-6">
-          <p className="text-indigo-200 text-sm font-medium">
-            Chapter {chapterOrder} · {chapterTitle}
-          </p>
-          <h1 className="text-xl font-bold text-white mt-1">Quiz</h1>
-          <div className="flex items-center gap-2 mt-3">
-            <div className="flex-1 bg-[#1565C0] rounded-full h-2">
-              <div
-                className="bg-white h-2 rounded-full transition-all duration-300"
-                style={{
-                  width: `${((currentQuestion + 1) / questions.length) * 100}%`,
-                }}
-              />
-            </div>
-            <span className="text-blue-100 text-sm">
-              {currentQuestion + 1}/{questions.length}
-            </span>
           </div>
           <span className="text-indigo-100 text-sm whitespace-nowrap">
             {currentQuestion + 1}/{questions.length}
@@ -283,20 +265,6 @@ export function QuizClient({
                     : answers[i] !== null
                       ? "bg-indigo-100 text-indigo-700"
                       : "bg-gray-100 text-gray-500 hover:bg-gray-200"
-        <div className="px-8 py-8">
-          <p className="text-lg font-medium text-white mb-6">
-            {currentQuestion + 1}. {q.text}
-          </p>
-
-          <div className="space-y-2">
-            {q.options.map((option, i) => (
-              <button
-                key={i}
-                onClick={() => selectAnswer(i)}
-                className={`w-full text-left px-4 py-3 rounded-xl border-2 transition-all ${
-                  answers[currentQuestion] === i
-                    ? "border-[#1E88E5] bg-[#1E88E5]/20 text-[#1E88E5] font-medium"
-                    : "border-[#4A5568] hover:border-[#1E88E5] text-gray-300"
                 }`}
               >
                 {i + 1}
@@ -305,7 +273,7 @@ export function QuizClient({
           </div>
         </div>
 
-        {/* RIGHT PANEL — 60% — Answer options + explanation */}
+        {/* RIGHT PANEL — 60% — Answer options */}
         <div className="lg:w-3/5 flex flex-col gap-4">
           {/* Answer options card */}
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex-1">
@@ -332,108 +300,64 @@ export function QuizClient({
               })}
             </div>
           </div>
-        <div className="border-t border-[#4A5568] px-8 py-5 bg-[#1A1A1D] flex justify-between items-center">
-          <button
-            onClick={() => setCurrentQuestion((c) => Math.max(0, c - 1))}
-            disabled={currentQuestion === 0}
-            className="text-[#546E7A] border border-[#4A5568] px-4 py-2 rounded-xl text-sm hover:bg-[#3A3A3D] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-          >
-            ← Previous
-          </button>
-
-          {/* Navigation footer */}
-          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 py-4 flex justify-between items-center">
-            <button
-              onClick={() => setCurrentQuestion((c) => Math.max(0, c - 1))}
-              disabled={currentQuestion === 0}
-              className="flex items-center gap-1.5 text-gray-600 border border-gray-300 px-4 py-2 rounded-xl text-sm hover:bg-gray-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              onClick={() =>
-                setCurrentQuestion((c) => Math.min(questions.length - 1, c + 1))
-              }
-              disabled={answers[currentQuestion] === null}
-              className="bg-[#1E88E5] text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-[#1565C0] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-              </svg>
-              Previous
-            </button>
-
-            {/* Question nav dots — mobile only */}
-            <div className="flex gap-1.5 lg:hidden flex-wrap justify-center flex-1 mx-3">
-              {questions.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentQuestion(i)}
-                  title={`Question ${i + 1}`}
-                  className={`w-6 h-6 rounded-full text-xs font-medium transition-colors ${
-                    i === currentQuestion
-                      ? "bg-indigo-600 text-white"
-                      : answers[i] !== null
-                        ? "bg-indigo-100 text-indigo-700"
-                        : "bg-gray-100 text-gray-500"
-                  }`}
-                >
-                  {i + 1}
-                </button>
-              ))}
-            </div>
-
-            {currentQuestion < questions.length - 1 ? (
-              <button
-                onClick={() =>
-                  setCurrentQuestion((c) => Math.min(questions.length - 1, c + 1))
-                }
-                disabled={selectedAnswer === null}
-                className="flex items-center gap-1.5 bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              >
-                Next
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-                </svg>
-              </button>
-            ) : (
-              <button
-                onClick={submitQuiz}
-                disabled={!isAllAnswered || submitting}
-                className="flex items-center gap-1.5 bg-green-600 text-white px-5 py-2 rounded-xl text-sm font-medium hover:bg-green-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              >
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                {submitting ? "Submitting…" : "Submit Quiz"}
-              </button>
-            )}
-          </div>
-          ) : (
-            <button
-              onClick={submitQuiz}
-              disabled={!isAllAnswered || submitting}
-              className="bg-[#00FF88] text-[#1A1A1D] px-6 py-2 rounded-xl text-sm font-medium hover:bg-neon-green-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-            >
-              {submitting ? "Submitting..." : "Submit Quiz"}
-            </button>
-          )}
         </div>
+      </div>
 
-        {/* Question navigation dots */}
-        <div className="px-8 pb-5 flex gap-2 flex-wrap">
+      {/* Navigation footer */}
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 px-6 py-4 flex justify-between items-center mt-4">
+        <button
+          onClick={() => setCurrentQuestion((c) => Math.max(0, c - 1))}
+          disabled={currentQuestion === 0}
+          className="flex items-center gap-1.5 text-gray-600 border border-gray-300 px-4 py-2 rounded-xl text-sm hover:bg-gray-100 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          ← Previous
+        </button>
+
+        {/* Question nav dots — mobile only */}
+        <div className="flex gap-1.5 lg:hidden flex-wrap justify-center flex-1 mx-3">
           {questions.map((_, i) => (
             <button
               key={i}
               onClick={() => setCurrentQuestion(i)}
-              className={`w-8 h-8 rounded-full text-xs font-medium transition-colors ${
+              title={`Question ${i + 1}`}
+              className={`w-6 h-6 rounded-full text-xs font-medium transition-colors ${
                 i === currentQuestion
-                  ? "bg-[#1E88E5] text-white"
+                  ? "bg-indigo-600 text-white"
                   : answers[i] !== null
-                    ? "bg-[#1E88E5]/20 text-[#1E88E5]"
-                    : "bg-[#3A3A3D] text-[#546E7A]"
+                    ? "bg-indigo-100 text-indigo-700"
+                    : "bg-gray-100 text-gray-500"
               }`}
             >
               {i + 1}
             </button>
           ))}
         </div>
+
+        {currentQuestion < questions.length - 1 ? (
+          <button
+            onClick={() =>
+              setCurrentQuestion((c) => Math.min(questions.length - 1, c + 1))
+            }
+            disabled={selectedAnswer === null}
+            className="flex items-center gap-1.5 bg-indigo-600 text-white px-4 py-2 rounded-xl text-sm font-medium hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            Next
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+            </svg>
+          </button>
+        ) : (
+          <button
+            onClick={submitQuiz}
+            disabled={!isAllAnswered || submitting}
+            className="flex items-center gap-1.5 bg-green-600 text-white px-5 py-2 rounded-xl text-sm font-medium hover:bg-green-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            {submitting ? "Submitting…" : "Submit Quiz"}
+          </button>
+        )}
       </div>
     </main>
   );
