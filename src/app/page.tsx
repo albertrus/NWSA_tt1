@@ -118,6 +118,96 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Comparison Chart Section */}
+      <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16">
+        <h2 className="text-3xl font-bold text-center text-white mb-12">
+          Why This is the Best TTT-1 Prep Course Online
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full text-sm border-collapse">
+            <thead>
+              <tr className="bg-[#2D2D30] text-white">
+                <th className="text-left px-6 py-4 rounded-tl-2xl font-semibold text-base">Feature</th>
+                <th className="px-6 py-4 font-semibold text-base text-[#1E88E5]">Our Course</th>
+                <th className="px-6 py-4 font-semibold text-base text-[#546E7A]">Other Study Guides</th>
+                <th className="px-6 py-4 font-semibold text-base text-[#546E7A] rounded-tr-2xl">Self-Study</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                {
+                  feature: "Complete Domain Coverage",
+                  our: { icon: "✅", label: "All 5 domains" },
+                  others: { icon: "⚠️", label: "Incomplete" },
+                  self: { icon: "❌", label: "Hit or miss" },
+                },
+                {
+                  feature: "Practice Questions",
+                  our: { icon: "✅", label: "Hundreds" },
+                  others: { icon: "⚠️", label: "Limited" },
+                  self: { icon: "❌", label: "None" },
+                },
+                {
+                  feature: "Exam-Weighted Focus",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "❌", label: "No" },
+                  self: { icon: "❌", label: "No" },
+                },
+                {
+                  feature: "Mobile Accessible",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "⚠️", label: "Sometimes" },
+                  self: { icon: "❌", label: "PDF only" },
+                },
+                {
+                  feature: "Progress Tracking",
+                  our: { icon: "✅", label: "Advanced" },
+                  others: { icon: "❌", label: "No" },
+                  self: { icon: "❌", label: "No" },
+                },
+                {
+                  feature: "Updated Standards",
+                  our: { icon: "✅", label: "2025" },
+                  others: { icon: "⚠️", label: "Outdated" },
+                  self: { icon: "⚠️", label: "Maybe" },
+                },
+                {
+                  feature: "Flashcard System",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "❌", label: "No" },
+                  self: { icon: "❌", label: "No" },
+                },
+                {
+                  feature: "Official Exam Format",
+                  our: { icon: "✅", label: "Yes" },
+                  others: { icon: "⚠️", label: "Close" },
+                  self: { icon: "❌", label: "No" },
+                },
+              ].map((row, i) => (
+                <tr
+                  key={row.feature}
+                  className={i % 2 === 0 ? "bg-[#222225]" : "bg-[#2D2D30]"}
+                >
+                  <td className="px-6 py-4 text-white font-medium">{row.feature}</td>
+                  <td className="px-6 py-4 text-center">
+                    <span className="text-lg">{row.our.icon}</span>{" "}
+                    <span className="text-[#1E88E5] font-semibold">{row.our.label}</span>
+                  </td>
+                  <td className="px-6 py-4 text-center text-[#546E7A]">
+                    <span className="text-lg">{row.others.icon}</span>{" "}
+                    <span>{row.others.label}</span>
+                  </td>
+                  <td className="px-6 py-4 text-center text-[#546E7A]">
+                    <span className="text-lg">{row.self.icon}</span>{" "}
+                    <span>{row.self.label}</span>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="bg-[#FF5500] text-white py-20 mt-16">
         <div className="max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 text-center">
