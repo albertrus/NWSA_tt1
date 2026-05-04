@@ -73,7 +73,7 @@ export function QuizClient({
 
   if (result) {
     return (
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div
             className={`px-8 py-6 ${result.passed ? "bg-green-600" : "bg-red-500"}`}
@@ -158,7 +158,7 @@ export function QuizClient({
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <main className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
       <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="bg-indigo-600 px-8 py-6">
           <p className="text-indigo-200 text-sm font-medium">
@@ -185,7 +185,7 @@ export function QuizClient({
             {currentQuestion + 1}. {q.text}
           </p>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {q.options.map((option, i) => (
               <button
                 key={i}

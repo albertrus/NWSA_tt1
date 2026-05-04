@@ -10,7 +10,7 @@ export function Navbar() {
 
   return (
     <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex justify-between h-16 items-center">
           <Link href="/" className="text-xl font-bold tracking-tight">
             NWSA TT1 Prep

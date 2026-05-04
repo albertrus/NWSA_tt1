@@ -11,6 +11,11 @@ body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+p {
+  line-height: 1.65;
 }
 
 @layer utilities {

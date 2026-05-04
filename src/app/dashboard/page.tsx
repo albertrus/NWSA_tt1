@@ -34,7 +34,7 @@ export default async function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#111111]">
       <Navbar />
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <h1 className="text-3xl font-bold text-white mb-2">
           Welcome back, {session.user.name?.split(" ")[0] ?? "Learner"}! 👋
         </h1>
@@ -89,7 +89,7 @@ export default async function DashboardPage() {
             View all →
           </Link>
         </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {chapters.map((chapter) => {
             const isCompleted = progress.some(
               (p) => p.chapterId === chapter.id && p.completed

@@ -51,7 +51,7 @@ export default function StudyGuidePage() {
   return (
     <div className="min-h-screen bg-slate-50">
       <Navbar />
-      <main className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <main className="max-w-5xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
         <div className="bg-white border border-slate-200 rounded-2xl p-8 shadow-sm mb-8">
           <p className="text-sm font-semibold text-indigo-600 mb-2">Training Guide</p>
           <h1 className="text-3xl font-bold text-slate-900 mb-3">NWSA TT1 4-Week Study Plan</h1>
@@ -61,7 +61,7 @@ export default function StudyGuidePage() {
           </p>
         </div>
 
-        <section className="grid gap-4 mb-8">
+        <section className="grid gap-5 mb-8">
           {weeklyPlan.map((item) => (
             <article key={item.week} className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm">
               <div className="flex flex-wrap items-center gap-3 mb-3">
@@ -94,7 +94,7 @@ export default function StudyGuidePage() {
           </ul>
         </section>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-4 mt-10">
           <Link
             href="/chapters"
             className="bg-indigo-600 text-white px-5 py-2.5 rounded-xl font-medium hover:bg-indigo-700 transition-colors"
