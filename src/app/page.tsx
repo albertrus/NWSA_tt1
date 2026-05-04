@@ -7,7 +7,7 @@ export default function HomePage() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 py-24 text-center">
+      <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-24 text-center">
         <span className="inline-block bg-[#FF5500]/20 text-[#FF5500] text-sm font-semibold px-4 py-1.5 rounded-full mb-6">
           MVP Beta — Free Access
         </span>
@@ -41,7 +41,7 @@ export default function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 py-16">
+      <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
           Everything You Need to Pass
         </h2>
@@ -81,7 +81,7 @@ export default function HomePage() {
       </section>
 
       {/* Social Proof / Chapters Preview */}
-      <section className="max-w-[1400px] mx-auto px-6 sm:px-10 lg:px-16 py-16">
+      <section className="max-w-container mx-auto px-6 sm:px-10 lg:px-16 py-16">
         <h2 className="text-3xl font-bold text-center text-white mb-12">
           Course Overview
         </h2>
