@@ -10,7 +10,7 @@ export function Navbar() {
 
   return (
     <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-container mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex justify-between h-16 items-center">
           <Link href="/" className="text-xl font-bold tracking-tight">
             NWSA TT1 Prep
@@ -21,25 +21,25 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="hover:text-[#FF5500] transition-colors"
+                  className="hover:text-[#1E88E5] transition-colors"
                 >
                   Dashboard
                 </Link>
                 <Link
                   href="/chapters"
-                  className="hover:text-[#FF5500] transition-colors"
+                  className="hover:text-[#1E88E5] transition-colors"
                 >
                   Chapters
                 </Link>
                 <Link
                   href="/study-guide"
-                  className="hover:text-[#FF5500] transition-colors"
+                  className="hover:text-[#1E88E5] transition-colors"
                 >
                   Study Guide
                 </Link>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="bg-[#FF5500] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#e04a00] transition-colors"
+                  className="bg-[#1E88E5] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#1565C0] transition-colors"
                 >
                   Sign Out
                 </button>
@@ -48,19 +48,19 @@ export function Navbar() {
               <>
                 <Link
                   href="/study-guide"
-                  className="hover:text-[#FF5500] transition-colors"
+                  className="hover:text-[#1E88E5] transition-colors"
                 >
                   Study Guide
                 </Link>
                 <Link
                   href="/auth/login"
-                  className="hover:text-[#FF5500] transition-colors"
+                  className="hover:text-[#1E88E5] transition-colors"
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="bg-[#FF5500] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#e04a00] transition-colors"
+                  className="bg-[#1E88E5] text-white px-4 py-1.5 rounded-lg font-medium hover:bg-[#1565C0] transition-colors"
                 >
                   Get Started
                 </Link>
@@ -99,28 +99,28 @@ export function Navbar() {
               <>
                 <Link
                   href="/dashboard"
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Dashboard
                 </Link>
                 <Link
                   href="/chapters"
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Chapters
                 </Link>
                 <Link
                   href="/study-guide"
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Study Guide
                 </Link>
                 <button
                   onClick={() => signOut({ callbackUrl: "/" })}
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                 >
                   Sign Out
                 </button>
@@ -129,21 +129,21 @@ export function Navbar() {
               <>
                 <Link
                   href="/study-guide"
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Study Guide
                 </Link>
                 <Link
                   href="/auth/login"
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Sign In
                 </Link>
                 <Link
                   href="/auth/register"
-                  className="block py-2 hover:text-[#FF5500]"
+                  className="block py-2 hover:text-[#1E88E5]"
                   onClick={() => setMenuOpen(false)}
                 >
                   Get Started

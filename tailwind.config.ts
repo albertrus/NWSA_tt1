@@ -8,16 +8,38 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      screens: {
-        xl: "1440px",
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
       },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-        "sc-orange": "#FF5500",
-        surface: "#1a1a1a",
-        "surface-elevated": "#222222",
-        "surface-hover": "#2a2a2a",
+        // Primary Colors
+        "electric-blue": "#1E88E5",
+        "electric-blue-dark": "#1565C0",
+        "hi-orange": "#FF5722",
+        "hi-orange-dark": "#F4511E",
+        "charcoal": "#1A1A1D",
+        "charcoal-elevated": "#2D2D30",
+        "charcoal-hover": "#3A3A3D",
+        "steel-gray": "#4A5568",
+        "steel-gray-light": "#546E7A",
+        // Accent Colors
+        "neon-green": "#00FF88",
+        "neon-green-dark": "#00e07a",
+        "warn-yellow": "#FFD700",
+        // Surface aliases
+        surface: "#2D2D30",
+        "surface-elevated": "#2D2D30",
+        "surface-hover": "#3A3A3D",
+      },
+      maxWidth: {
+        container: "1400px",
+      },
+      lineHeight: {
+        body: "1.65",
       },
     },
   },
