@@ -42,7 +42,7 @@ next-env.d.ts
 .env.local
 .env*.local
 
-# SQLite database files (not migrations)
+# Database files
 *.db
 *.db-journal
 prisma/dev.db

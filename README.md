@@ -18,7 +18,7 @@ An MVP online school platform for preparing and passing the **Message TT1** exam
 | Framework | Next.js 14 (App Router) |
 | Language | TypeScript |
 | Auth | NextAuth.js v4 (Google OAuth + Credentials) |
-| Database | Prisma ORM + SQLite (dev) |
+| Database | Prisma ORM + PostgreSQL |
 | Styling | Tailwind CSS |
 | CI/CD | GitHub Actions |
 
@@ -27,6 +27,7 @@ An MVP online school platform for preparing and passing the **Message TT1** exam
 ### Prerequisites
 - Node.js 18+
 - npm
+- A PostgreSQL database (see [Neon](https://neon.tech) for a free hosted option)
 
 ### Installation
 
@@ -47,15 +48,44 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
+> **Note:** The app auto-seeds chapters and quizzes on the first request — no manual seed step required.
+
 ### Environment Variables
 
 | Variable | Description |
 |---|---|
-| `DATABASE_URL` | SQLite database path (e.g., `file:./dev.db`) |
-| `NEXTAUTH_URL` | App URL (e.g., `http://localhost:3000`) |
+| `DATABASE_URL` | PostgreSQL connection string (e.g., from Neon) |
+| `NEXTAUTH_URL` | App URL (e.g., `http://localhost:3000` or your Vercel URL) |
 | `NEXTAUTH_SECRET` | Random secret (min 32 chars) |
 | `GOOGLE_CLIENT_ID` | Google OAuth client ID |
 | `GOOGLE_CLIENT_SECRET` | Google OAuth client secret |
+
+## Deploying to Vercel (Demo)
+
+### 1. Create a free PostgreSQL database on Neon
+1. Sign up at [neon.tech](https://neon.tech)
+2. Create a new project → copy the **Connection string** as `DATABASE_URL`
+
+### 2. Set up Google OAuth
+1. Go to [Google Cloud Console → Credentials](https://console.cloud.google.com/apis/credentials)
+2. Create an **OAuth 2.0 Client ID** (Web application)
+3. Add your Vercel URL as an **Authorized redirect URI**: `https://YOUR-APP.vercel.app/api/auth/callback/google`
+4. Copy the **Client ID** and **Client Secret**
+
+### 3. Deploy on Vercel
+1. Go to [vercel.com](https://vercel.com) → **New Project** → import `albertrus/NWSA_tt1`
+2. Add the following **Environment Variables** in the Vercel dashboard:
+
+| Variable | Value |
+|---|---|
+| `DATABASE_URL` | Your Neon connection string |
+| `NEXTAUTH_URL` | `https://YOUR-APP.vercel.app` |
+| `NEXTAUTH_SECRET` | Generate with: `openssl rand -base64 32` or [generate-secret.vercel.app/32](https://generate-secret.vercel.app/32) |
+| `GOOGLE_CLIENT_ID` | Your Google OAuth client ID |
+| `GOOGLE_CLIENT_SECRET` | Your Google OAuth client secret |
+
+3. Click **Deploy** — Vercel will run `next build` automatically
+4. The app auto-seeds content on the first page visit
 
 ## Project Structure
 
@@ -73,7 +103,6 @@ src/
 └── types/                # TypeScript declarations
 prisma/
 ├── schema.prisma         # Database schema
-└── migrations/           # Database migrations
 .github/
 └── workflows/
     └── ci.yml            # GitHub Actions CI/CD pipeline
