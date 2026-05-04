@@ -9,8 +9,8 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="bg-[#1A1A1D] text-white shadow-md border-b border-[#4A5568]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="bg-[#111111] text-white shadow-md border-b border-[#333]">
+      <div className="max-w-container mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex justify-between h-16 items-center">
           <Link href="/" className="text-xl font-bold tracking-tight">
             NWSA TT1 Prep

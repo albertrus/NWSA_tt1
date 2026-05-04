@@ -22,7 +22,42 @@
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-heading), var(--font-inter), sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    line-height: 1.15;
+  }
+
+  h1 { letter-spacing: 0.07em; }
+  h3 { letter-spacing: 0.05em; }
+
+  p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.65;
+  }
+
+  code,
+  kbd,
+  samp,
+  pre {
+    font-family: var(--font-mono), ui-monospace, monospace;
+    font-size: 0.9em;
+  }
 }
 
 @layer utilities {

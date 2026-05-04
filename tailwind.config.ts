@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
+        heading: ["var(--font-heading)", "var(--font-inter)", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "monospace"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
@@ -29,6 +34,12 @@ const config: Config = {
         surface: "#2D2D30",
         "surface-elevated": "#2D2D30",
         "surface-hover": "#3A3A3D",
+      },
+      maxWidth: {
+        container: "1400px",
+      },
+      lineHeight: {
+        body: "1.65",
       },
     },
   },

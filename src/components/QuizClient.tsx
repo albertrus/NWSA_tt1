@@ -73,8 +73,8 @@ export function QuizClient({
 
   if (result) {
     return (
-      <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="bg-[#2D2D30] rounded-2xl shadow-sm border border-[#4A5568] overflow-hidden">
+      <main className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
+        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
           <div
             className={`px-8 py-6 ${result.passed ? "bg-[#00FF88]/20 border-b border-[#00FF88]/30" : "bg-[#FF5722]/20 border-b border-[#FF5722]/30"}`}
           >
@@ -158,10 +158,10 @@ export function QuizClient({
   }
 
   return (
-    <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-      <div className="bg-[#2D2D30] rounded-2xl shadow-sm border border-[#4A5568] overflow-hidden">
-        <div className="bg-[#1E88E5] px-8 py-6">
-          <p className="text-blue-200 text-sm font-medium">
+    <main className="max-w-3xl mx-auto px-6 sm:px-10 lg:px-16 py-10">
+      <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+        <div className="bg-indigo-600 px-8 py-6">
+          <p className="text-indigo-200 text-sm font-medium">
             Chapter {chapterOrder} · {chapterTitle}
           </p>
           <h1 className="text-xl font-bold text-white mt-1">Quiz</h1>
@@ -185,7 +185,7 @@ export function QuizClient({
             {currentQuestion + 1}. {q.text}
           </p>
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {q.options.map((option, i) => (
               <button
                 key={i}
