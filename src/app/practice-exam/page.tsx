@@ -17,7 +17,7 @@ const DOMAIN_TABLE = [
 ];
 
 const EXAM_PARAMS = [
-  { label: "Total Questions", value: "85 multiple-choice questions" },
+  { label: "Total Questions", value: "85 multiple-choice questions (this practice exam uses 100 questions for broader coverage)" },
   { label: "Time Allowed", value: "90 minutes" },
   { label: "Format", value: "Multiple choice (4 options per question)" },
   { label: "Passing Score", value: "Criterion-referenced (determined by psychometric analysis)" },
@@ -519,6 +519,13 @@ export default function PracticeExamPage() {
   );
   const [submitted, setSubmitted] = useState(false);
 
+  const resetExam = (returnToIntro = false) => {
+    setAnswers(new Array(TOTAL).fill(null));
+    setSubmitted(false);
+    setCurrent(0);
+    if (returnToIntro) setShowIntro(true);
+  };
+
   if (showIntro) {
     return <PracticeExamIntro onStart={() => setShowIntro(false)} />;
   }
@@ -644,22 +651,13 @@ export default function PracticeExamPage() {
 
           <div className="mt-8 flex justify-center gap-4">
             <button
-              onClick={() => {
-                setAnswers(new Array(TOTAL).fill(null));
-                setSubmitted(false);
-                setCurrent(0);
-              }}
+              onClick={() => resetExam()}
               className="bg-[#2D2D30] border border-[#4A5568] text-gray-300 px-6 py-2.5 rounded-xl font-medium hover:bg-[#3A3A3D] transition-colors"
             >
               Retake Quiz
             </button>
             <button
-              onClick={() => {
-                setAnswers(new Array(TOTAL).fill(null));
-                setSubmitted(false);
-                setCurrent(0);
-                setShowIntro(true);
-              }}
+              onClick={() => resetExam(true)}
               className="bg-[#2D2D30] border border-[#4A5568] text-gray-300 px-6 py-2.5 rounded-xl font-medium hover:bg-[#3A3A3D] transition-colors"
             >
               ← Back to Overview
