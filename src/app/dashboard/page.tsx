@@ -5,6 +5,7 @@ import { prisma } from "@/lib/prisma";
 import { seedDatabase } from "@/lib/db";
 import Link from "next/link";
 import { Navbar } from "@/components/Navbar";
+import { DashboardTabs } from "@/components/DashboardTabs";
 
 export default async function DashboardPage() {
   const session = await getServerSession(authOptions);
@@ -41,6 +42,8 @@ export default async function DashboardPage() {
         <p className="text-[#546E7A] mb-8">
           Here&apos;s your learning progress overview.
         </p>
+
+        <DashboardTabs overviewContent={<>
 
         {/* Stats Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
@@ -164,6 +167,7 @@ export default async function DashboardPage() {
             </div>
           </>
         )}
+        </>} />
       </main>
     </div>
   );
