@@ -9,8 +9,7 @@ import bcrypt from "bcryptjs";
 import { verify as totpVerify } from "otplib/functional";
 
 export const authOptions: NextAuthOptions = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  adapter: PrismaAdapter(prisma) as any,
+  adapter: PrismaAdapter(prisma),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
