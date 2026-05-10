@@ -43,6 +43,8 @@ model User {
   password          String?
   twoFactorEnabled  Boolean   @default(false)
   twoFactorSecret   String?
+  hasPurchased      Boolean   @default(false)
+  purchasedAt       DateTime?
   accounts          Account[]
   sessions          Session[]
   progress          UserProgress[]
