@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
-interface Question {
+export interface Question {
   domain: string;
   domainNumber: number;
   text: string;
@@ -13,7 +13,7 @@ interface Question {
   reference: string;
 }
 
-const QUESTIONS: Question[] = [
+export const QUESTIONS: Question[] = [
   // Domain 1 — Planning the Scope of Work and Job Logistics (Q1–Q15)
   {
     domain: "Planning the Scope of Work and Job Logistics",
