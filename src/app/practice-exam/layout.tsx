@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Quick Quiz",
+  title: "Practice Exam — NWSA TTT-1",
 };
 
 export default function PracticeExamLayout({

@@ -41,9 +41,10 @@ model User {
   emailVerified     DateTime?
   image             String?
   password          String?
-  twoFactorEnabled  Boolean   @default(false)
-  twoFactorSecret   String?
-  accounts          Account[]
+  twoFactorEnabled      Boolean   @default(false)
+  twoFactorSecret       String?
+  practiceExamAccess    Boolean   @default(false)
+  accounts              Account[]
   sessions          Session[]
   progress          UserProgress[]
   quizAttempts      QuizAttempt[]
