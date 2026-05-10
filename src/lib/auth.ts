@@ -1,9 +1,12 @@
 import { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import GoogleProvider from "next-auth/providers/google";
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
+import AppleProvider from "next-auth/providers/apple";
+import FacebookProvider from "next-auth/providers/facebook";
+import { PrismaAdapter } from "@auth/prisma-adapter";
 import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
+import { verify as totpVerify } from "otplib/functional";
 
 export const authOptions: NextAuthOptions = {
   adapter: PrismaAdapter(prisma),
@@ -12,11 +15,20 @@ export const authOptions: NextAuthOptions = {
       clientId: process.env.GOOGLE_CLIENT_ID ?? "",
       clientSecret: process.env.GOOGLE_CLIENT_SECRET ?? "",
     }),
+    AppleProvider({
+      clientId: process.env.APPLE_ID ?? "",
+      clientSecret: process.env.APPLE_SECRET ?? "",
+    }),
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID ?? "",
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET ?? "",
+    }),
     CredentialsProvider({
       name: "credentials",
       credentials: {
         email: { label: "Email", type: "email" },
         password: { label: "Password", type: "password" },
+        totpCode: { label: "2FA Code", type: "text" },
       },
       async authorize(credentials) {
         if (!credentials?.email || !credentials?.password) {
@@ -38,6 +50,20 @@ export const authOptions: NextAuthOptions = {
 
         if (!isPasswordValid) {
           throw new Error("Invalid credentials");
+        }
+
+        if (user.twoFactorEnabled && user.twoFactorSecret) {
+          if (!credentials.totpCode) {
+            throw new Error("2FA_REQUIRED");
+          }
+          const result = await totpVerify({
+            token: credentials.totpCode,
+            secret: user.twoFactorSecret,
+          });
+          const isValid = typeof result === "object" ? result.valid : !!result;
+          if (!isValid) {
+            throw new Error("Invalid 2FA code");
+          }
         }
 
         return {
