@@ -55,12 +55,12 @@ Open [http://localhost:3000](http://localhost:3000).
 | Variable | Description |
 |---|---|
 | `DATABASE_URL` | PostgreSQL connection string (e.g., from Neon) |
-| `NEXTAUTH_URL` | App URL (e.g., `http://localhost:3000` or your Vercel URL) |
+| `NEXTAUTH_URL` | App URL (e.g., `http://localhost:3000` or your deployed URL) |
 | `NEXTAUTH_SECRET` | Random secret (min 32 chars) |
 | `GOOGLE_CLIENT_ID` | Google OAuth client ID |
 | `GOOGLE_CLIENT_SECRET` | Google OAuth client secret |
 
-## Deploying to Vercel (Demo)
+## Deploying
 
 ### 1. Create a free PostgreSQL database on Neon
 1. Sign up at [neon.tech](https://neon.tech)
@@ -69,23 +69,20 @@ Open [http://localhost:3000](http://localhost:3000).
 ### 2. Set up Google OAuth
 1. Go to [Google Cloud Console → Credentials](https://console.cloud.google.com/apis/credentials)
 2. Create an **OAuth 2.0 Client ID** (Web application)
-3. Add your Vercel URL as an **Authorized redirect URI**: `https://YOUR-APP.vercel.app/api/auth/callback/google`
+3. Add your deployed URL as an **Authorized redirect URI**: `https://YOUR-APP-URL/api/auth/callback/google`
 4. Copy the **Client ID** and **Client Secret**
 
-### 3. Deploy on Vercel
-1. Go to [vercel.com](https://vercel.com) → **New Project** → import `albertrus/NWSA_tt1`
-2. Add the following **Environment Variables** in the Vercel dashboard:
+### 3. Set environment variables on your host
 
 | Variable | Value |
 |---|---|
 | `DATABASE_URL` | Your Neon connection string |
-| `NEXTAUTH_URL` | `https://YOUR-APP.vercel.app` |
-| `NEXTAUTH_SECRET` | Generate with: `openssl rand -base64 32` or [generate-secret.vercel.app/32](https://generate-secret.vercel.app/32) |
+| `NEXTAUTH_URL` | `https://YOUR-APP-URL` |
+| `NEXTAUTH_SECRET` | Generate with: `openssl rand -base64 32` |
 | `GOOGLE_CLIENT_ID` | Your Google OAuth client ID |
 | `GOOGLE_CLIENT_SECRET` | Your Google OAuth client secret |
 
-3. Click **Deploy** — Vercel will run `next build` automatically
-4. The app auto-seeds content on the first page visit
+The app auto-seeds content on the first page visit.
 
 ## Project Structure
 

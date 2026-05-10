@@ -8,7 +8,7 @@ const config: CapacitorConfig = {
   webDir: "public",
   server: {
     // ⚠️  REQUIRED: Replace the URL below with your deployed Next.js URL
-    // (e.g. "https://your-app.vercel.app") before running `npx cap add ios/android`.
+    // before running `npx cap add ios/android`.
     // See CAPACITOR_SETUP.md Step 2 for instructions.
     url: "REPLACE_WITH_YOUR_DEPLOYED_URL",
     cleartext: false,

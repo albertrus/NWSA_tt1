@@ -5,7 +5,7 @@ Next.js web app in a native iOS/Android shell that can be submitted to both mark
 
 > **How it works:** The native app opens a WebView that loads your deployed Next.js URL.
 > All server-side features (API routes, auth, database) continue to run on your hosting
-> provider (e.g. Vercel, Railway). Only the native shell lives in the app stores.
+> provider. Only the native shell lives in the app stores.
 
 ---
 
@@ -25,7 +25,6 @@ Next.js web app in a native iOS/Android shell that can be submitted to both mark
 
 Deploy the Next.js app to a public HTTPS URL first. Recommended options:
 
-- **Vercel** (easiest): `vercel deploy`
 - **Railway**: connect the repo and deploy
 - **Render**, **Fly.io**, etc.
 
@@ -40,7 +39,7 @@ Open `capacitor.config.ts` and replace the placeholder with your deployed URL:
 
 ```typescript
 server: {
-  url: "https://your-actual-app.vercel.app",
+  url: "https://your-actual-app-url.com",
   cleartext: false,
 },
 ```
